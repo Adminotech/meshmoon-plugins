@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D98F91CB-0A44-4F5D-8296-A484E79F8770}</ProjectGuid>
+    <RootNamespace>RocketMediaPlayer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v90</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;ROCKET_MEDIAPLAYER_EXTERNAL_BUILD;QT_DLL;QT_NETWORK_LIB;QT_CORE_LIB;QT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\deps\qt\include;..\..\deps\qt\include\Qt;..\..\deps\qt\include\QtCore;..\..\deps\qt\include\QtNetwork;..\..\deps\vlc\include;.\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\deps\qt\lib;..\..\deps\vlc\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libvlc.lib;libvlccore.lib;QtCore-vc9-x86-d4.lib;QtNetwork-vc9-x86-d4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;ROCKET_MEDIAPLAYER_EXTERNAL_BUILD;QT_DLL;QT_NETWORK_LIB;QT_CORE_LIB;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\deps\qt\include;..\..\deps\qt\include\Qt;..\..\deps\qt\include\QtCore;..\..\deps\qt\include\QtNetwork;..\..\deps\vlc\include;.\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\deps\qt\lib;..\..\deps\vlc\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libvlc.lib;libvlccore.lib;QtCore-vc9-x86-4.lib;QtNetwork-vc9-x86-4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;ROCKET_MEDIAPLAYER_EXTERNAL_BUILD;QT_DLL;QT_NETWORK_LIB;QT_CORE_LIB;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\deps\qt\include;..\..\deps\qt\include\Qt;..\..\deps\qt\include\QtCore;..\..\deps\qt\include\QtNetwork;..\..\deps\vlc\include;.\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\deps\qt\lib;..\..\deps\vlc\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libvlc.lib;libvlccore.lib;QtCore-vc9-x86-4.lib;QtNetwork-vc9-x86-4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Rocket\resource.h" />
+    <CustomBuild Include="MediaPlayerNetwork.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\deps\qt\bin\moc.exe "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cxx</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename)%(Extension) using MOC</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)moc_%(Filename).cxx</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\deps\qt\bin\moc.exe "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cxx</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Filename)%(Extension) using MOC</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)moc_%(Filename).cxx</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">..\..\deps\qt\bin\moc.exe "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cxx</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Compiling %(Filename)%(Extension) using MOC</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">%(RootDir)%(Directory)moc_%(Filename).cxx</Outputs>
+    </CustomBuild>
+    <ClInclude Include="MediaPlayerNetworkMessages.h" />
+    <CustomBuild Include="RocketMediaPlayer.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\deps\qt\bin\moc.exe "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cxx</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename)%(Extension) using MOC</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)moc_%(Filename).cxx</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\deps\qt\bin\moc.exe "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cxx</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Filename)%(Extension) using MOC</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)moc_%(Filename).cxx</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">..\..\deps\qt\bin\moc.exe "%(FullPath)" -o "%(RootDir)%(Directory)moc_%(Filename).cxx</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Compiling %(Filename)%(Extension) using MOC</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">%(RootDir)%(Directory)moc_%(Filename).cxx</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MediaPlayerNetwork.cpp" />
+    <ClCompile Include="RocketMediaPlayer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources\RocketMediaPlayer.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
