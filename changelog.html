@@ -1,0 +1,768 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>Meshmoon Rocket Changelog</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Economica:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+    body {
+        background-color: rgb(240,240,240);
+        font-family: "Source Sans Pro";
+        padding-top: 120px;
+    }
+    .toppanel {
+        position: absolute;
+        padding-top: 25px;
+        
+        background-color: white;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        border-bottom: 1px solid rgb(180,180,180);
+        box-shadow: 0 0 10px gray;
+        -moz-box-shadow: 0 0 10px gray;
+    }
+    .title {
+        font-family: "Economica";
+        font-size: 40pt;
+        font-weight: bold;
+        color: #0794c3;
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+    .links {
+        font-family: "Source Sans Pro";
+        font-size: 12pt;
+        font-weight: bold;
+        line-height: 10px;
+        padding: 10px;
+        padding-top: 0px;
+        padding-left: 12px;
+        color: gray;
+    }
+    .links > a {
+        text-decoration: none;
+        color: gray;
+    }
+    .links > a:hover {
+        text-decoration: underline;
+    }
+    @media screen and (max-width: 850px) {
+        .title {
+            font-size: 30pt;
+        }
+        .legend {
+            visibility: hidden;
+        }
+    }
+    p, h2 {
+        font-size: 22pt;
+        margin: 10px;
+        margin-left: 0px;
+        color: rgb(30,30,30);
+    }
+    p {
+        font-size: 14pt;
+        font-weight: bold;
+    }
+    ul {
+        font-family: "Inconsolata", "Courier New";
+        font-size: 14pt;
+        line-height: 24px;
+    }
+    .subcategory {
+        font-family: "Source Sans Pro";
+        font-size: 14pt;
+        font-weight: bold;
+    }
+    .timestamp {
+        font-size: 16pt;
+        color: #df8615;
+        float: right;
+        padding: 0px;
+    }
+    .in-development-container {
+        background-color: rgba(80,80,80, 0.08);
+        padding-left: 8px;
+        margin-top: 10px;
+        margin-left: -8px;
+        margin-right: -7px;
+        border-top: 1px solid rgb(80,80,80);
+        border-bottom: 1px solid rgb(80,80,80);
+    }
+    .new, .enh, .fix, .osx, .win, .in-development {
+        color: white;
+        font-size: 13pt;
+        padding: 5px;
+        padding-right: 6px;
+        padding-top: 0px;
+        padding-bottom: 2px;
+        border: 0px;
+        border-radius: 3px;
+        margin-right: 6px;
+    }
+    .in-development {
+        background-color: rgb(80,80,80);
+        position: relative;
+        left: -8px;
+        font-weight: normal;
+        border-radius: 0px;
+    }
+    .new {
+        background-color: #0794c3;
+    }
+    .enh {
+        background-color: #df8615;
+    }
+    .fix {
+        background-color: green;
+    }
+    .win {
+        background-color: #180153;
+    }
+    .osx {
+        background-color: #245463;
+    }
+    .legend {
+        text-align: right;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        line-height: 28px;
+    }
+    ul {
+        padding-left: 30px;
+    }
+    ul > ul {
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+
+<div class="toppanel">
+    <div class="title">Meshmoon Rocket Changelog</div>
+    <div class="links"><a href="http://meshmoon.com" target="_blank">meshmoon.com</a> / <a href="http://doc.meshmoon.com" target="_blank">doc.meshmoon.com</a> / <a href="http://doc.meshmoon.com/doxygen" target="_blank">API docs</a></div>
+</div>
+
+<div class="legend">
+    <span class="new">New feature / functionality</span><span class="fix">Bugfix</span></br>
+    <span class="enh">Enhancement to existing functionality</span></br>
+    <span class="win">Windows</span><span class="osx">Mac OS X</span>
+</div>
+
+
+<div class="in-development-container">
+    <span class="in-development">in development</span>
+
+    <h2>2.5.4.2</h2>
+
+    <ul>
+        <li class="subcategory">Tundra Core</li>
+        <ul>
+            <li><span class="fix">bugfix</span>TriMesh/ConvexHull based physics were not releasing all memory on shape type change and RigidBody destruction. This resulted in out of memory crashes in dynamic worlds that loaded and unloaded parts of the scene. Crashes could also occurr if user logged into multiple heavy worlds with same Rocket instance. Thanks to Evocons employees for reporting the bug and providing scripts/assets to reproduce it.</li>
+            <li><span class="fix">bugfix</span>Fix multiple minor memory leaks around the codebase. These are minor and should not trigger runtime crashes, but could culumate over time in certain scenarios to be significant.</li>
+            <li><span class="fix">bugfix</span>Fix component crashes and performance issues when running in headless mode. In practise only affects headless server runs.</li>
+            <li><span class="fix">bugfix</span>Make UTF8 characters work correctly to shell and UI console output.</li>
+            <li><span class="fix">bugfix</span>Fix crash bug on application exit if Script or C++ requested an asset during exit procedure.</li>
+        </ul>
+    </ul>
+</div>
+
+
+<h2>2.5.4.1 <div class="timestamp">01.09.2014</div></h2>
+<ul>
+    <li class="subcategory">Meshmoon Storage</li>
+    <ul>
+        <li><span class="new">new</span>Support drag and dropping files from storage to the hard drive and to 3rd party software.</li>
+        <li><span class="enh">enhancement</span>Show file preview for images on mouse hover. Can be disabled from the Storages top right corner settings menu. Always enabled in Storage picker dialogs.</li>
+        <li><span class="enh">enhancement</span>Support obj/dae/fbx mesh drag and drop to 3D space (all Assimp formats).</li>
+        <li><span class="enh">enhancement</span>Show human readable errors in the UI if authentication fails. This will help people figure out what the problem might be.</li>
+        <li><span class="enh">enhancement</span>Import dialog will notify user if RocketEnvironment from the import has been auto deselected and how to proceed if he wants to import it.</li>
+        <li><span class="fix">bugfix</span>Ignore Rocket shipped shadow textures in materials when importing scene.</li>
+    </ul>
+    <li class="subcategory">Material Editor</li>
+    <ul>
+        <li><span class="enh">enhancement</span>Accept texture drag and drop from Storage to the texture slot widgets.</li>
+    </ul>
+    <li class="subcategory">Layers</li>
+    <ul>
+        <li><span class="fix">bugfix</span>Fix download all button to work after hide all was pressed. Fix UI layout issues.</li>
+    </ul>
+    <li class="subcategory">Rocket Build Mode</li>
+    <ul>
+        <li><span class="fix">bugfix</span>Fix building block placer being visible when it should not be.</li>
+        <li><span class="fix">bugfix</span>Scene Optimizer: Disable use of swizzled pixel formats for normal maps. This produced 'pinkish' normal maps that Rocket nor WebRocket could render properly.</li>
+    </ul>
+    <li class="subcategory">Meshmoon SDK</li>
+    <ul>
+        <li><span class="new">new</span>Support functionality and co-operation logic for Meshmoon SDK.</li>
+    </ul>
+    <li class="subcategory">Performance</li>
+    <ul>
+        <li><span class="enh">enhancement</span>Scene Structure Window: Major optimizations in opening, closing, sorting, adding/removing Entities, groupping/ungroupping Entities. Removing entities was made a non blocking operation. In general the editor should not freeze anymore for long perioids of time. Tested to work smoothly in a +5000 Entity scene. Now you are able to keep the window open when large number of Entities are created, removed or acked. Entity groups are now always sorted first in the view.</li>
+        <li><span class="enh">enhancement</span>Scene imports in Tundra are now sorted to optimize parent Entities being created before children.</li>
+        <li><span class="enh">enhancement</span>Creating scene description objects now uses a internal asset ref cache to avoid unneccesary recursive directory searches the import path. This fix directly affects the Meshmoon Storage scene import pre processing phase to be faster.</li>
+        <li><span class="enh">enhancement</span>Placeable component performance improvements for child Placeable tracking. No longer iterates the whole Scene when children are queried.</li>
+    </ul>
+    <li class="subcategory">Misc.</li>
+    <ul>
+        <li><span class="new">new</span>Meshmoon3DText component. This is a skeleton component that does not have desktop Rocket implementation. It will be first implemented in WebRocket and later to desktop if useful.</li>
+        <li><span class="new">new</span>New system wide Meshmoon shader based default and error materials. Biggest effect will be on meshes/submeshes that do now have materials set, which now will receive a grey solid color with correct light rendering.</li>
+        <li><span class="enh">enhancement</span>Read 'heightmap' as 'normalmap' from Assimp if no real normalmap is set. This seems to be a common bug in exporters or a bug in Assimp itself.</li>
+        <li><span class="enh">enhancement</span>Omit leading zeros of floats when saving scene as TXML.</li>
+        <li><span class="enh">enhancement</span>Add timestamp (wall clock time) for the input events.</li>
+        <li><span class="enh">enhancement</span>Scene Structure Window: 'Save scene as...' now lets you choose if local and/or temporary Entities are saved to the result txml. The last txml save path and the options are stored to a config and remembered next time you open the dialog.</li>
+        <li><span class="enh">enhancement</span>SceneInteract raycast helpers to offload expensive scripting operations into C++.</li>
+        <li><span class="enh">enhancement</span>Txml serilization will no longer write trailing zeroes for MathGeoLib types. Reduces txml size slightly.</li>
+        <li><span class="fix">bugfix</span>Light component updates starting state correctly to the renderer. This makes lights render correctly when creating new lights manually or in Rocket Build Mode.</li>
+        <li><span class="fix">bugfix</span>Now all XML, binary and scene desc based imports fix id based Placeable parenting after server acks the newly created Entities. These fixes directly affect the Meshmoon Storage scene imports.</li>
+        <li><span class="fix">bugfix</span>Fix CAVE mode crash when --rocketCaveConfig was not used.</li>
+        <li><span class="fix">bugfix</span>Fix InputAPI::SceneReleaseMouseButtons() to actually emit a release event.</li>
+        <li><span class="fix">bugfix</span>Fix Entity parenting after a Scene import. Executed once the server has acked all new Entity ids.</li>
+        <li><span class="fix">bugfix</span>Fix Scene Editor crash when importing Entities that are groupped on the client to the server.</li>
+        <li><span class="fix">bugfix</span>Fix Placeable visibility bug when parenting is used. Hidden children were being shown if the parent was shown.</li>
+        <li><span class="fix">bugfix</span>Replace Tundra Assimp implementation with the Meshmoon one if it has been loaded first.</li>
+        <li><span class="fix">bugfix</span>Fix F1 console history when multiple commands have been issued.</li>
+        <li><span class="fix">bugfix</span>Fix EC_Camera::QueryVisibleEntities to ignore invisible objects.</li>
+    </ul>
+</ul>
+
+<h2>2.5.4 <div class="timestamp">24.06.2014</div></h2>
+
+<ul>
+<li class="subcategory">Meshmoon Storage</li>
+<ul>
+    <li><span class="new">new</span>New auto hide feature to slide the UI out of the way when mouse is not on top of it. Can be disabled by pinning the ui from a UI checkbox.</li>
+    <li><span class="new">new</span>Implemented new download as zip functionality. Can be used when you multi select storage items. Also supports selecting folders.</li>
+    <li><span class="enh">enhancement</span>More and better checks for protected locations, e.g. `/backup`. You can no longer create/upload new files/folders.</li>
+    <li><span class="enh">enhancement</span>New > Ogre Material now creates a default material with new diffuse shader so the UI won't complain about upgrading when you open it for the first time.</li>
+    <li><span class="enh">enhancement</span>Scripts (.js and .webrocketjs) can be drag and dropped from Storage into Entities.</li>
+</ul>
+<li class="subcategory">Rocket Build Mode</li>
+<ul>
+    <li><span class="new">new</span>New auto hide feature to slide the UI out of the way when mouse is not on top of it. Can be disabled by pinning the ui from a UI checkbox.</li>
+    <li><span class="new">new</span>New space shadow setup into the 'Environment' panel.</li>
+    <li><span class="new">new</span>New 'Teleports' panel for a way to add Meshmoon teleports from UI and configure them with visual aids.</li>
+    <li><span class="enh">enhancement</span>Prioritize on non-temporary, replicated 'RocketEnvironment' entity to be picked.</li>
+    <li><span class="enh">enhancement</span>Disabled remove materials depth check. This will allow you to see better what you are about to remove.</li>
+</ul>
+<li class="subcategory">Material Editor</li>
+<ul>
+    <li><span class="new">new</span>New easier to use UI that now uses the new Meshmoon shaders and supports all of their settings to be configured.</li>
+    <li><span class="new">new</span>Added new tiling, filter and anisotropy settings for texture units.</li>
+    <li><span class="new">new</span>When opening existing non Meshmoon Shader enabled materials, the UI can automatically upgrade you to the new shaders. If matching shader functionality can be found, the transformation will be lossless. Upgrade is optional, user needs to accept it from popup dialog.</li>
+    <li><span class="fix">bugfix</span>Fix bugs when using/picking CRN textures.</li>
+</ul>
+<li class="subcategory">Texture Editor</li>
+<ul>
+    <li><span class="fix">bugfix</span>Fixed crash bug when opening a DDS or CRN with the Texture Viewer. Occurred when image was still being loaded and user closed the editor.</li>
+    <li><span class="enh">enhancement</span><span class="osx">mac os x</span>Can now also open DDS/CRN for preview and texture information.</li>
+</ul>
+<li class="subcategory">Text Editor</li>
+<ul>
+    <li><span class="enh">enhancement</span>Text Editor got a facelift with a Sublime-like theme. Syntax highlighting for .material, .js, .obj, .mtl, .txml, .xml and .dae. files.</li>
+    <li><span class="enh">enhancement</span>Added tab/space visualization, font size configuration and fix bugs on keyboard text select logic.</li>
+</ul>
+<li class="subcategory">All Rocket Asset Editors</li>
+<ul>
+    <li><span class="enh">enhancement</span>Fixed window flags that always keep it on top of the Rocket main window but still allows other OS windows to be on top of them.</li>
+    <li><span class="enh">enhancement</span>Report initial resource download percentage and the resource save progress in the bottom status bar.</li>
+    <li><span class="enh">enhancement</span>User cannot save again until the current save operation (upload) is completed, you'll get a notification popup.</li>
+    <li><span class="enh">enhancement</span>Unsaved changed dialog now has "Save and close" option. Dialog now indicates what file is unsaved and what type of editor has it open e.g. "my.material - Material Editor" or "my.material - Text Editor" to make it clear what the user is answering to.</li>
+</ul>
+<li class="subcategory">Layers Widget</li>
+<ul>
+    <li><span class="enh">enhancement</span>Added download/hide all buttons for convenience.</li>
+    <li><span class="fix">bugfix</span>Added scroll bar area so that all layers can be seen even if there is not enough vertical screen space. Affects scenes with typically more than 10 layers.</li>
+</ul>
+<li class="subcategory">Space Optimizer</li>
+<ul>
+    <li><span class="enh">enhancement</span><span class="osx">mac os x</span>Can now run the full optimization suite, including DDS/CRN texture optimizations.</li>
+</ul>
+<li class="subcategory">Rendering</li>
+<ul>
+    <li><span class="new">new</span>New and improved shadows on both OpenGL and Direct3D.</li>
+    <li><span class="new">new</span>New SceneShadowSetup component that allows artists to configure shadows per scene. UI provided by build modes Environment tab.</li>
+    <li><span class="new">new</span><span class="win">windows</span>Meshmoon shader spotlight support. Mac OS X will be added later.</li>
+    <li><span class="enh">enhancement</span>Light attenuations are now much simpler that makes it easier to create nice looking lighting into your scene. Only range and brightness affects light rendering with the new shaders. Light components attenuation attributes no longer affect the rendering.</li>
+    <li><span class="enh">enhancement</span>Medium graphics setting now uses high detail shadows with smaller shadow map size. Low details shadows are to be deprecated due to rendering artifacts. Log graphics setting disabled shadows as before.</li>
+</ul>
+<li class="subcategory">MeshmoonHttpPlugin</li>
+<ul>
+    <li><span class="enh">enhancement</span>Add support for providing body from disk file. Mostly useful for scripting.</li>
+</ul>
+<li class="subcategory">Misc.</li>
+<ul>
+    <li><span class="new">new</span>New RocketAssetMonitor as a public API. Mainly useful for scripts that want to know when all assets are loaded or monitor the progress. Available from 'rocket.assetMonitor'.</li>
+    <li><span class="new">new</span>Added `blinkFrequency` attribute for EC_StencilGlow (0, i.e. disabled, by default).</li>
+    <li><span class="fix">bugfix</span>Fixed realXtend Tundra (TundraProtocolModule) network message processing buffer overflow, which corrupted the server/client that received the too big message and would crash it. Encountered in big attribute update messages. Overflow checks are in place for both server and client, to ensure malformed data never even goes to the network. But if it does with malicious intent, the read-end checks will ignore the messages.</li>
+    <li><span class="fix">bugfix</span>Fixed crash bug when creating a dynamic attribute of invalid/unknown type.</li>
+    <li><span class="fix">bugfix</span>Rocket notifications and the teleport confirmation UI raised to always be on top of other Rocket UI.</li>
+    <li><span class="fix">bugfix</span>Fix bug in resolving top most parent window for a widget. Now centers dialogs etc. correctly for parented top level windows.</li>
+    <li><span class="fix">bugfix</span>Fix EC_Placeable performance problem when monitoring for parent entity creation. This affected scenes that had thousands of Entities and used parenting in a certain way.</li>
+    <li><span class="fix">bugfix</span>Fix crash bug in EC_Mesh when applied a skeleton to a model that does not have bone weights.</li>
+    <li><span class="fix">bugfix</span>Fix Windows OpenGL texture mipmap generation and visual bugs in mesh assets.</li>
+    <li><span class="enh">enhancement</span>Optimized Meshmoon backend queries. Getting the 3D space listing, promoted graphics and statistics to the Rocket lobby is now a lot faster.</li>
+    <li><span class="enh">enhancement</span>Optimized web and media component runtime detection and inspection from the scene.</li>
+    <li><span class="enh">enhancement</span>Text and Mesh editors will remember the last closed position and size of the window.</li>
+    <li><span class="enh">enhancement</span>Improved Rocket QGraphicsWidget animation engine.</li>
+    <li><span class="enh">enhancement</span>Style and color palette improvements to Build Mode and Meshmoon Storage.</li>
+    <li><span class="enh">enhancement</span>Update to Assimp 3.1.1 with preliminary FBX support (via EC_Mesh::meshRef and EC_MeshmoonAvatar) and bug fixes to OBJ/DAE.</li>
+    <li><span class="enh">enhancement</span>Improved OBJ import: Faster, supports bigger meshes, referenced .mtl pre-load, better material generation + auto Meshmoon shaders if textured.</li>
+    <li><span class="enh">enhancement</span>Various UI/style fixes for high DPI screens. Mostly affects machines with high resolution displays (e.g. Mac retina).</li>
+</ul>
+</ul>
+
+<h2>2.5.3.1 <div class="timestamp">20.03.2014</div></h2>
+
+<ul>
+    <li><span class="new">new</span>New and improved Meshmoon shaders. These new shaders will bring proper lighting and fix a lot of the problems and bugs compared to the realXtend Tundra shaders. These shaders will be integrated to the Rocket Material Editor once they are done. Right not pushed so that artists can try them out, see more here.</li>
+    <li><span class="new">new</span>Meshmoon Storage: You can now drag and drop mesh and material files from Meshmoon Storage into the 3D world. Instantiates new mesh to the drop location or sets material to the mesh under the drop location.</li>
+    <li><span class="new">new</span>Meshmoon Storage: Make server side only executed scripts reload when you upload/save a new version of it.</li>
+    <li><span class="new">new</span>New extensive and script-friendly HTTP client API available for both server and client side code. Supports GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE. Custom request headers, building the request URL incrementally, HTTP authorization support and a nice chainable API. Make all aspects of the server response available like status code, body, server sent headers etc.</li>
+    <li><span class="new">new</span>Build mode now has an axis widget that shows the scene's base axes.</li>
+    <li><span class="new">new</span>Meshmoon Education Program client side UI support.</li>
+    <li><span class="new">new</span>--logLevelNetwork {info|debug} cmd line parameter, can be used to reduce network spam when using --logLevel debug.</li>
+    <li><span class="new">new</span>RocketAssetMonitor utility class that has useful signals and function for asset monitoring. Accessible via 'rocket.assetMonitor' in scripting.</li>
+    <li><span class="enh">enhancement</span>MeshmoonWater rendering performance improvements.</li>
+    <li><span class="enh">enhancement</span>Meshmoon Storage text editor: Improve indentation code, support multi line indentation back/forward, implement auto indencation on newline, and support opening .dae, .obj, .meshmoonavatar and .avatar.</li>
+    <li><span class="enh">enhancement</span>Collada/Obj assets: Performance improvements and bug fixes. Make EC_Mesh use the improved Assimp importer code that ships with Rocket.</li>
+    <li><span class="enh">enhancement</span>Improve UI console readability and fix crash when doing huge amounts of logging.</li>
+    <li><span class="enh">enhancement</span>Improved performance of Scene Structure, Entity and Asset Import, and Assets windows, when dealing with very large collections (many thousands)</li>
+    <li><span class="enh">enhancement</span>Loading screen hides if all asset transfers are complete. Added completion percent to the loading screen to give an idea about the load time.</li>
+    <li><span class="fix">bugfix</span>Windows: Fixed DirectX rendering problems when moving Rocket main window to another monitor.</li>
+    <li><span class="fix">bugfix</span>Windows: Fixed many rendering problems with OpenGL, you can enable it with --opengl command line. May be a option in Rocket Settings in the future.</li>
+    <li><span class="fix">bugfix</span>Fixed EC_RigidBody::ShapeAABB() crash when called before rigid body initialized properly.</li>
+    <li><span class="fix">bugfix</span>Fixed EC_StencilGlow + added scale attribute for it.</li>
+    <li><span class="fix">bugfix</span>Entity::SeralizeToXMLString() fixed.</li>
+    <li><span class="fix">bugfix</span>If --noFileWatcher used, disable file watcher for LocalAssetProviders.</li>
+</ul>
+
+<h2>2.5.3.0 <div class="timestamp">29.01.2014</div></h2>
+
+<ul>
+    <li><span class="new">new</span>MeshmoonWorld API that provides currently logged in world information, like name and unique Meshmoon wide id. It also tracks all users in the world with name, connection id and permissions level. Exposed as rocket.world, users can be access via rocket.world.users.</li>
+    <li><span class="new">new</span>RocketFileSystem API that provides certain file system functionality for scripts: The API is designed to be a secure way for arbitrary in world scripts to get file system functionality. Meaning that it can ask the user for directory or file locations for load/save purpouses. This API or the main Tundra scripting API does NOT let arbitrary scripts list, read or write the users file system. The API will ask for permission for a application before continuing, you can at any point deny or cancel the operation or providing file paths if you wish.</li>
+    <li><span class="enh">enhancement</span>Rocket Reporter: append architecture to full version version identifier.</li>
+    <li><span class="new">new</span>realXtend Tundra core development that makes web client connections first class citizens in the Meshmoon platform. Paves the way for WebRocket 1.0 and makes scripting easier with web clients on the server side.</li>
+    <li><span class="enh">enhancement</span>Improve script interoperability by fixing the QVariant setters/getters, exposing TundraCore enums (f.ex. EntityAction.Server and MouseEvent.MousePressed), etc. In general dynamic attributes (EC_DynamicComponent) are now available also as object properties just like static in components (e.g. entity.dynamicComponent.myAttribute). This brings a lot nicer scripting API for developers.</li>
+    <li><span class="enh">enhancement</span>EC_Sound: The used sound channel is exposed for scripting for manipulating e.g. pitch that is not exposed by the component itself.</li>
+    <li><span class="enh">enhancement</span>InputContext: Expose RegisterKeyEvent function to scripting, example: inputContext.RegisterKeyEvent(new QKeySequence(Qt.ControlModifier + Qt.Key_F)).SequencePressed.connect(ToggleFullScreen)</li>
+    <li><span class="new">new</span>OgreMeshAsset: Support loading manual LOD levels as dependencies to the main mesh.</li>
+    <li><span class="fix">bugfix</span>Fix crashes when doing a .txml drag and drop import if it contained certain components.</li>
+    <li><span class="new">new</span>Visual Ogre particle editor. Easy way to configure particle scripts from a graphical user interface, just like the material editor.</li>
+    <li><span class="new">new</span>Visual Ogre mesh viewer. Preview your meshes under different ambient and directional light settings. Get wireframe view and statistics about triangle count etc. Can set custom materials (not working well for all type of materials yet). Rotating the mesh with sliders or with mouse interaction, also auto rotation check boxes for constant rotation per axis.</li>
+    <li><span class="enh">enhancement</span>Material editor: New 3D rendering preview right in the widget. New help buttons to take you into the Ogre material manuals so you can understand the options provided by the user interface better.</li>
+    <li><span class="enh">enhancement</span>Storage: Double click automatically opens editor if the asset type has one. Search filtering applied also when the folder view is updated (e.g. when you upload files).</li>
+    <li><span class="fix">bugfix</span><span class="osx">mac os x</span>Fix color picker widgets to work correctly after closed once. Same UI than on windows.</li>
+</ul>
+
+<h2>2.5.2.3 <div class="timestamp">05.12.2013</div></h2>
+
+<ul>
+    <li><span class="new">new</span>Build mode has delete button for selected entities. Manual scale manipulation widgets.</li>
+    <li><span class="new">new</span>Meshmoon storage allows to create new files. Right click on top of storage or any asset and select 'New' from context menu. Currently supports: Ogre material script, JSON, XML, txt and script files.</li>
+    <li><span class="fix">bugfix</span>Fix broken shadows that sneaked into the 2.5.2.2 release.</li>
+    <li><span class="fix">bugfix</span>EC_MediaPlayer and EC_WebBrowser components are more reliable and stable.</li>
+    <li><span class="fix">bugfix</span>Set volume to 0 for media that is initially outside the set spatialRadius distance.</li>
+    <li><span class="fix">bugfix</span>Fix EC_MeshmoonSky to support static time aka you can stop time by setting simulated mode and setting time multiplier below 1.0</li>
+    <li><span class="fix">bugfix</span>EC editor does not show editing gizmo in any situation if disabled.</li>
+    <li><span class="fix">bugfix</span>Don't show Oculus shaders in Rocket material editor.</li>
+    <li><span class="enh">enhancement</span>More improvements to the world filtering widget. Page up/down and home toggle world listing pages.</li>
+    <li><span class="fix">bugfix</span><span class="osx">mac os x</span>Update VLC to 2.1.1</li>
+</ul>
+
+<h2>2.5.2.2 <div class="timestamp">28.11.2013</div></h2>
+
+<ul>
+    <li><span class="new">new</span>The Rocket world listing lobby filter improvements. Gives multiple suggestions for search terms. Logic improvements to give more relevant search results.</li>
+    <li><span class="new">new</span>Keyboard navigation to search filter and the world grid view. Use Tab, Esc, arrow keys and enter to navigate and login to worlds. Start typing immediately on startup or when switching to lobby view to start filtering.</li>
+    <li><span class="new">new</span>More ways to order and sort servers. Trending worlds for today, this week and this month. Most popular worlds 3 months, 6 months and all time. Sort alphabetically by world name and account. Sort worlds first that are admined by you and/or worlds that have currently users in them. You can access these settings from the right side of the search bar.</li>
+    <li><span class="enh">enhancement</span>Performance optimization on showing and parsing the server listing, it is significantly faster esp. on large number of worlds. Lazily load promotion graphics only when they are needed.</li>
+    <li><span class="fix">bugfix</span>Fixed window resizing on OS X Maverick.</li>
+    <li><span class="fix">bugfix</span>Cleaned up settings widget to show consistently on all platforms.</li>
+    <li><span class="fix">bugfix</span>Handle too long world and account names better to not stretch the worlds grid widget.</li>
+</ul>
+
+<h2>2.5.2.1 <div class="timestamp">21.11.2013</div></h2>
+
+<ul>
+    <li><span class="new">new</span>Oculus Rift support. Detects Oculus Rift device and guides you how to enable Oculus Rendering when inside a world. Implemented initial 3D user interface mode so you can interact with the 3D world and the UI when in Oculus Rift rendering mode.</li>
+    <li><span class="new">new</span>Offline lobby user interface that informs about offline mode and lets you access offline tools and settings. Checks automatically if you have gained a network connection.</li>
+    <li><span class="new">new</span>JSON support in TundraCore (developed my Meshmoon)</li>
+    <li><span class="new">new</span>Allow to exit Rocket from the right panel if in fullscreen Cave or Oculus rendering mode.</li>
+
+    <li><span class="enh">enhancement</span>Enhanced user interface and font readability on with out of the norm system DPI settings.</li>
+    <li><span class="enh">enhancement</span>Mumble VOIP audio recording and playback is now threaded. Allows you to have clean and consistent audio quality even if your machine cant render the 3D content above 30 FPS.</li>
+    <li><span class="enh">enhancement</span>OgreMaterialAsset::Attribute getter function for material attribute values</li>
+    <li><span class="enh">enhancement</span>Multi- and group-selection and (transform) editing in build mode</li>
+    <li><span class="enh">enhancement</span>"Screen count", "Primary screen", "Window on screen", "Screen geom. on active screen", "Avail. geom. on active screen", "Desktop size", and "FPS limit when inactive" information added to the Rocket Reporter's additional data.</li>
+    <li><span class="enh">enhancement</span>Possibility to set scene layer visibility from QtScript.</li>
+
+    <li><span class="fix">bugfix</span>Fix Meshmoon storage copy operation set read all ACL to the new file.</li>
+    <li><span class="fix">bugfix</span>Fix MediaBrowser component to correctly report playback state for playlist type media (.m3u, .pls etc.). Similarly fixes radius volume control for playlist type media.</li>
+    <li><span class="fix">bugfix</span>Fix COLLADA (.dae) file loading as Mesh component's meshRef. Fix relative texture ref resolving inside .dae file. Fixes crashes when using .dae mesh refs.</li>
+    <li><span class="fix">bugfix</span>Do not allow script to include/depend on itself via engine.IncludeFile or // !ref:. Fixes crash on server and client when this was done.</li>
+    <li><span class="fix">bugfix</span>Make Rocket server listing UI not pop up on top of settings and other views on some occasions.</li>
+    <li><span class="fix">bugfix</span>Fix AssetAPI::ParseAssetRef to correctly resolve base path and filename for refs that don't have a file extension suffix. Makes it possible to do for example API calls like http://my.api.com/object/list?count=10 without AssetAPI mangling the URL.</li>
+    <li><span class="fix">bugfix</span>Fix erroneous removal of scenes used by Presis and Avatar editor in case Settings page was opened before any of those</li>
+    <li><span class="fix">bugfix</span>Fix crash when accessing dynamic component property of a removed component from a script</li>
+    <li><span class="fix">bugfix</span>Fix EC_AnimationController crash when created as unparented</li>
+    <li><span class="fix">bugfix</span>Fix Tundra and Rocket executables with --help or --version switch not to crash</li>
+    <li><span class="fix">bugfix</span>Fix Tundra and Rocket executables with --version switch actually to produce the version information (and nothing else). Do not print application initialization prints until the application is about to start for real (no --help or --version given)</li>
+    <li><span class="fix">bugfix</span>Early application initialization log prints now shown in the drop-down console</li>
+    <li><span class="fix">bugfix</span>Renamed EC_Mesh meshMaterials attribute to materialRefs. The old one is deprecated but still works, no old JavaScript code or .txml loading will break due to this change.</li>
+</ul>
+
+<h2>2.5.2 <div class="timestamp">24.09.2013</div></h2>
+<p>Rocket feature summary</p>
+<ul>
+    <li><span class="new">new</span>New MeshmoonWater, MeshmoonSky and MeshmoonCloudLayer components. Built with http://sundog-soft.com real time sky and water libraries. Added support for the both components to build mode environment tab. Mac OSX system (especially with ATI graphics cards) may still have rendering issue with the new sky and water. Hence these components are "experimental", we will try to resolve the remaining these issues as soon as possible.</li>
+    <li><span class="new">new</span>You can now pick meshes and materials from your storage in build modes block building tab. Works in create and edit mode. Integrated this to the visual Material editor and other material pickers. This file selection dialog is also exposed to scripting via the MeshmoonStorage object that you can obtain from Rocket.</li>
+    <li><span class="new">new</span>New texture viewer. This is a new visual editor, so you can preview textures and their metadata by right clicking the items on storage and selecting visual editor. Also integrated preview button to material editor. Also works for DDS/CRN textures (might be windows only for a while). This editor does not have editing capabilities, you can only view.</li>
+    <li><span class="new">new</span>Help -> Show Licenses and -> Show EULA was added. People can now easily see what other open source software (and commercial in the case on Meshmoon) was used to build realXtend Tundra and Meshmoon on top of it. Shows full license and most libraries have links to their website.</li>
+    <li><span class="new">new</span>Computer's manufacturer and product information added to support request (Windows-only for now)</li>
+    <li><span class="new">new</span>Check box for entity group visibility in Scene Structure window</li>
+    <li><span class="new">new</span>"Edit", "Edit in new", "Paste", and "Actions..." actions for entity groups in Scene Structure window</li>
+    <li><span class="new">new</span>State of Scene Structure window settings (Show groups, show components, show attributes) saved/loaded to/from config</li>
+    <li><span class="new">new</span>On Mac OSX local scenes (.txml files) can now be opened in Rocket by double-clicking them.</li>
+    <li><span class="enh">enhancement</span>When storage is open, you can now drag and drop also on top of the 3D view. Also fixes problems of drag and drop focus not always working on top of the storage widget. Added informative tooltip next to mouse when dragging.</li>
+    <li><span class="fix">bugfix</span>Storage scene import would not let you import scenes that did not have any assets. Fixed Ogre .scene imports to split material files correctly.</li>
+    <li><span class="fix">bugfix</span>Fixed Meshmoon storage getting stuck, could not be opened again, if closed before authentication could be finalized.</li>
+    <li><span class="fix">bugfix</span>Fixed various bugs in build mode for lights etc.</li>
+    <li><span class="fix">bugfix</span>Fixed scene struct 'Export' crash bug.</li>
+    <li><span class="fix">bugfix</span>Scene Structure is cleared when scene is cleared or removed (on disconnect)</li>
+    <li><span class="fix">bugfix</span>Scene Structure and Entity-Component Editor performance improvements when working with a large scene (many hundreds or even thousands of entities)</li>
+    <li><span class="fix">bugfix</span>Fix crashed in QtScript on non-ASCII keyboard input. This might crash the client suddenly when pressing Unicode chars on the keyboard, e.g. Macedonian/French etc. keyboard.</li>
+    <li><span class="fix">bugfix</span>Fixed EC_WaterPlane crash when running in headless mode</li>
+    <li><span class="fix">bugfix</span>Entity Actions and Functions dialogs' size is kept sane when dealing with lots of targets</li>
+    <li><span class="fix">bugfix</span>Sorting entities by name works now properly in Scene Structure Window</li>
+    <li><span class="fix">bugfix</span>Smaller installer and application size by removing unused files and features (translation files, certain VLC plugins)</li>
+    <li><span class="fix">bugfix</span>Entity-Component Editor is cleared when scene is cleared or removed (on disconnect)</li>
+    <li><span class="fix">bugfix</span>Script-safe return values for EC_Mesh's LocalAABB, WorldAABB, LocalOBB and WorldOBB</li>
+    <li><span class="fix">bugfix</span>Fixed EC Editor highlight not disappearing when closing the editor.</li>
+    <li>Lots of other smaller bug fixes and improvements...</li>
+</ul>
+<p>realXtend Tundra summary. Includes Meshmoon open source contributions.</p>
+<ul>
+    <li>Update to Qt 4.8.5 on Windows and OS X.</li>
+    <li>Update to Ogre 1.9 RC1.</li>
+    <li>Update to a new version of MathGeoLib with several new functions and bugfixes.</li>
+    <li>Configurable texture budget: when exceeded or near exceeded, textures will be loaded in reduced resolution.</li>
+    <li>Ogre instancing support in the Mesh component. Automatic generation of instanced versions of the SuperShaders.</li>
+    <li>Threaded HttpAssetProvider cache write to improve performance and responsiveness when loading a scene with a "cold" cache.</li>
+    <li>Improved build and installer scripts on Windows, including support for 64-bit targets. Installer detects and optionally removes old Tundra installation.</li>
+    <li>Improved Linux build script. Contributed by Peter C.</li>
+    <li>Possibility to build only Debug or Release dependencies instead of both to reduce the dependencies build time.</li>
+    <li>Cleaned up startup configuration file syntax: use the same commands as command line startup parameters. Allow configuration files to include other configuration files.</li>
+    <li>All startup parameters unified to lowerCamelCase format for better readability. Old format also retained for now.</li>
+    <li>Possibility to access scene components without the EC_ prefix from script; .txml files saved without the EC_ prefix.</li>
+    <li>Possibility to access entity's components in lowerCamelCase from script for better readability.</li>
+    <li>Split less used or deprecated modules to the TundraAddons repository.</li>
+    <li>Add version information to the Tundra executables and libraries on Windows.</li>
+    <li>Distance along the ray added to RayCastResult.</li>
+    <li>RaycastAll() functions in OgreWorld for returning all hit objects along a ray.</li>
+    <li>PhysicsConstraint component.</li>
+    <li>Separate machine-readable ID's for component attributes in addition to the human-readable attribute names. This allow changing the human-readable name without breaking scene files.</li>
+    <li>Help text is shown if starting Tundra without a scene file.</li>
+    <li>Improved Profiler display. kNet network statistics shown in its own Profiler tab by default.</li>
+    <li>Bug fixes to allow creating components unparented (without a scene or entity). When serializing a scene description on import, use this feature to prevent changing the actual scene yet.</li>
+    <li>Transform gizmo bugfix: allow unlimited drag to the negative axis direction.</li>
+    <li>Fix loading of Ogg Vorbis sounds sometimes producing garbage audio.</li>
+    <li>API cleanup; more getter functions modified to concise form without the Get-prefix. Old functions retained, but marked deprecated.</li>
+    <li>Plus much more bugfixes and misc. improvements.</li>
+</ul>
+
+<h2>2.5.1.1 <div class="timestamp">01.07.2013</div></h2>
+<p>Hotfix summary</p>
+<ul>
+    <li>Fixed raycasting issues when clicking on objects which was experienced by some users.</li>
+</ul>
+
+<h2>2.5.1.0 <div class="timestamp">27.06.2013</div></h2>
+<ul>
+    <li>New Scene Optimizer page in Rocket build mode. Will optimize your scene assets and bundle them in zip files. This is all automatic with a single press of a button.</li>
+    <li>Build mode block building mode usability improvements, lots of bug fixes and new features. You can now add/remove/edit web browsers and media player to any object via block building mode. You can choose if you wish to clone physics and other components.</li>
+    <li>Ability to restore backups from the Meshmoon Storage tool. Ability to create copies of exiting files with new name.</li>
+    <li>New Rocket Material editor. Right click on material files in storage and select Open in Visual Tool to use it. Also improvements to the Text Editor.</li>
+    <li>New Rocket reporting/support request tool. This tool gathers performance and other profiles from your computer and sends them along with your support request. You can access it from the Help menu.</li>
+    <li>New Rocket notification system that can be utilized by scripts to get the users attention. This is also used by Rocket to inform you when your rendering or network performance is poor.</li>
+    <li>Build mode and Meshmoon storage are now also available to Content Creator permission level users. Using the storage will require you to have the storage authentication keys, the world admins can share them with you if they wish.</li>
+    <li>New parallax Meshmoon shaders.</li>
+    <li>Media Browser component now supports looping playback.</li>
+    <li>Mesh instancing support. This will radically improve performance and decrease memory usage on scenes that have lots of copies of the same mesh asset. Instancing can be turned on from the Mesh component attributes.</li>
+    <li>Profiler tool user interface cleanup and improvements. New profiling tabs for asset and network monitoring.</li>
+    <li>New PhysicsConstraint component.</li>
+</ul>
+
+<h2>2.5.0.2 <div class="timestamp">02.05.2013</div></h2>
+<p>Rocket feature summary</p>
+<ul>
+    <li>Rocket Launcher: New feature in Meshmoon ecosystem that enables you to embed rocket:// links to any web page. When the user clicks them Rocket will start and take them to the world you have selected, or filtering/highlighting a certain set of your worlds into the lobby. The rocket:// links can be generated from the Meshmoon website once you are logged in.</li>
+    <li>Meshmoon Build Mode: Lots of new usability and user interface improvements. New assets in Meshmoon Asset Library that is used in block building mode.</li>
+    <li>EC_MediaBrowser: Fixed playlist files to start first item in the playlist. Fixes playback of .pls, .m3u etc.</li>
+    <li>Undo/redo enhancements in both core editors and Meshmoon build mode. Added the standard Ctrl+Z/Y shortcuts to trigger them.</li>
+    <li>Fixed Meshmoon Cave/3D mode startup crash if fullscreen mode was not previously used. Also fixed the UI scene input offset that caused the UI offset by the height of the Qt top toolbar.</li>
+    <li>Fixed Tundra integer types to be exposed correctly to scripting. Fixes couple of server side bugs that were introduced in 2.5.0.1. At the same time these types are now considered numbers by the engine so might make using them a bit faster.</li>
+    <li>New Meshmoon shaders: DiffSpecmapNormalLightmap, DiffSpecmapNormalShadowLightmap and fixes to the existing ones.</li>
+</ul>
+<p>Platform specific changes</p>
+<ul>
+    <li>Windows: Fixed Rocket to work again on Windows XP. It was broken in 2.5.0.1 due to the boost dependency removal in the replacing threading library for Ogre.</li>
+    <li>Mac OSX: Fixed build mode top combo boxes to not hide items at the top.</li>
+</ul>
+
+<h2>2.5.0.1 <div class="timestamp">19.04.2013</div></h2>
+<p>Rocket feature summary</p>
+<ul>
+    <li>Meshmoon Build Mode: New block building functionality with Meshmoon Asset Library integration. Enables you to easily construct your scene without the need for complex 3D modelling software. Easy and fun world building! This is the first draft of this tool, we will make it more feature rich over time.</li>
+    <li>New EC_MeshmoonAvatar to support complex collada based avatars.</li>
+    <li>EC_WaterPlane: User environmental lighting better. Enabled use of custom material.</li>
+    <li>Fixed EC editor crashes when switching between multiple entities with the same editor.</li>
+    <li>General enhancements and bugfixes to SceneAPI, InpuAPI and the rest of realXtend Tundra core.</li>
+</ul>
+<p>Platform specific changes</p>
+<ul>
+    <li>Windows and Mac OSX: Removed Boost as a core dependency.</li>
+    <li>Windows and Mac OSX: Qt updated to 4.8.4.</li>
+    <li>Mac OSX: Using the latest C++11 runtime.</li>
+</ul>
+
+<h2>2.5.0.0 <div class="timestamp">25.03.2013</div></h2>
+<ul>
+    <li>Meshmoon Build Mode: New build tool for scene admins. The first version includes easy editing of sky, water, fog, lights and show you physics objects. We will be adding more stuff into this tool to make building easier.</li>
+    <li>Meshmoon Scene Storage: Search filter to find files. Txml drag and drop upload can be now done to a subfolder. All the needed files fill be uploaded there and relative asset refs will point to the subfolder correctly.</li>
+    <li>New Meshmoon Cave and 3D support: Supports single rendering window slitting for multi-monitor setups. See Rocket settings how to configure this feature.</li>
+    <li>EC_MeshmoonTeleport: Teleport component that support click and proximity teleporting with optional UI confirmation from the user. Supports teleports in your own scene or a teleport to other Meshmoon hosted scenes. Permission validations when teleport destination is a private scene.</li>
+    <li>Scene and Entity editors now have undo and redo functionality. Easy to step back and forward in your action history.</li>
+    <li>A lot of Tundra core bugfixes and improvements, sent both from Meshmoon and other companies/individuals to realXtend Tundra repository.</li>
+</ul>
+
+<h2>2.4.1.2 <div class="timestamp">18.02.2013</div></h2>
+<ul>
+    <li>Meshmoon Presis: Fix bug that broke creating some presentations. Fix so that presentation can start with left/right arrows.</li>
+    <li>New graphics settings: Easy to select low, medium, high and ultra levels. Or you can use custom to tweak all the options.</li>
+    <li>New Meshmoon shaders that are based on the Tundra super shader but now with additional rendering modes.</li>
+    <li>EC_WebBrowser: New Google Chromium based component with efficient rendering and input synchronization. Major improvement to the old web view component.</li>
+    <li>EC_MediaBrowser: New VLC based media player component with extended features compared to the old one. Major improvements in performance.</li>
+    <li>Fix certain shadows being tinted blue on windows.</li>
+    <li>SceneInteract: Expose the latest mouse raycast to anyone who is interested</li>
+    <li>SyncManager: Fix infinite interpolation bug for non-RigidBody entities. In practice: Now multiple clients can manipulate one Entity with visual tools and the editor.</li>
+    <li>Fix editors to allow bigger floating point numbers than 999.0</li>
+    <li>EC_ParticleSystem: Fix the component to work and render correctly.</li>
+    <li>EC_PlanarMirror: Null ptr crash fix if CreatePlane() function failed.</li>
+    <li>Improved Collada animation parsing.</li>
+</ul>
+
+<h2>2.4.1.1 <div class="timestamp">24.01.2013</div></h2>
+<ul>
+    <li>Meshmoon Presis: Create your own 3D presentations. Created presentation can be also viewed offline. You can find Presis from the Session menu.</li>
+    <li>Meshmoon Storage: Adjust storage endpoint. This should enable non EU users to connects to their storage successfully.</li>
+    <li>Meshmoon Storage: Deny uploads of files that name spaces in their name, informs users with a dialog. Spaces are always a bad idea in web hosted assets. Re-export your scene after removing spaces from object names and texture filenames.</li>
+    <li>3D highlight widget: Will no longer modify the Mesh material property when toggled on/off.</li>
+</ul>
+
+<h2>2.4.1</h2>
+<p>Rocket feature summary</p>
+<ul>
+    <li>Mumble VOIP: Fixed audio quality bugs when multiple users were speaking at the same time and in general.</li>
+    <li>Mumble VOIP: New echo cancellation functionality and settings wizard has new automatic level detection feature.</li>
+    <li>Basic users are not allowed to view or use Scene, Entity and Assets editor windows to locally modify or save the scene they are visiting. Basic users cannot use the following console commands: scenestruct, assets, savescene, loadscene, importscene, importmesh. The import functions would have been rejected on the server side later, but now we dont allow you to import anything even locally.</li>
+    <li>Fixed numerous bugs that were introduced with realXtend Tundra 2.4.1 release, sent to upstream: <a href="https://github.com/realXtend/naali/pull/600">https://github.com/realXtend/naali/pull/600</a></li>
+</ul>
+<p>Complete changelog from realXtend Tundra codebase for 2.4.1. Note that most of these were already included in the 2.4 or earlier Rocket clients</p>
+<ul>
+    <li>Add support for Crunch texture format (#532), see http://code.google.com/p/crunch/</li>
+    <li>Optimized Tundra built-in attribute change management architecture to use the new AttributeChanged() signature (#541, #563)</li>
+    <li>Merged in TundraCore DLL architecture change that reduces code duplication and plugin DLL sizes (#575)</li>
+    <li>Added support for building Tundra on Android (#574)</li>
+    <li>Moved SceneInteract into its own plugin to decouple application logic from core (7d53390)</li>
+    <li>Move several Ogre-specific scene components into OgreRenderingModule (fbc37db, db329a3)</li>
+    <li>Cleaned massive amounts of build warnings on /W4 and -Wall</li>
+    <li>Documentation cleanup</li>
+    <li>Fixed a bug in Transform constructor that left the scale member variable uninitialized (0f8d0f5)</li>
+    <li>Remove use of the InputMapper component in favor of more flexible InputContexts in scripts (109e6eb, #551)</li>
+    <li>Registered fixed-width primitive integer types to QtScript (d1e56c6)</li>
+    <li>Fixed a crash that could occur when the user clicked on the main window before any entities were loaded to the scene (bfc894c, 37ecf87)</li>
+</ul>
+
+<h2>2.4</h2>
+<p>Rocket feature summary</p>
+<ul>
+    <li>New avatar editor that lets you select your appearance. At the same time Meshmoon now support the avatar made with the OpenAvatar spesification. Initial set of available avatars, more can be added later without the need to update clients.</li>
+    <li>New integrated Meshmoon Storage tool for space administators that makes it easier to import your content into you scene. Includes a live editor for text based assets and simple click to instantiate new mesh objects.</li>
+    <li>New protocol for notifying all clients if scene assets have changed. This feature is utilized in the new integrated storage tool</li>
+    <li>Rocket will now notify you if you dont have permissions to manipulate the scene the first time you try to do something that is not permitted.</li>
+    <li>Meshmoon now has a public layers feature, that is accesible to all users. It's an easy way to add existing content to your scene or share your own scene as a public layer for everyone. You can find the new layer features from the web admin panels.</li>
+    <li>Meshmoon web admin panel got a new Application management interface. Now we provide more information about applications available for everyone. We hope to see your application there soon!</li>
+    <li>All around user interface tweaks and bug fixes to Rocket.</li>
+</ul>
+<p>Complete changelog from realXtend Tundra codebase. Note that most of these were already included in the 2.3.3.7 Rocket client.</p>
+<ul>
+    <li>Fixed KeyBindingMap not being accessible from QtScript. (related to #<a href="https://github.com/realXtend/naali/issues/485">485</a>)</li>
+    <li>Added support for individual objects to glow, and added a new Glow example scene.</li>
+    <li>Fix an issue where the default water plane slab was very shallow in depth.</li>
+    <li>Fixes an issue with Hydrax when using multiple scenes. (#<a href="https://github.com/realXtend/naali/issues/500">500</a>)</li>
+    <li>Exposed LoginProperties to QtScript.</li>
+    <li>Fixed a border issue with EC_GraphicsViewCanvas.</li>
+    <li>Added support for materials to refer to cube textures. (related to #<a href="https://github.com/realXtend/naali/issues/479">479</a>)</li>
+    <li>Refactored the EC_Sky component to support material asset references. (#<a href="https://github.com/realXtend/naali/issues/479">479</a>)</li>
+    <li>Added new module XMPPModule that enables Tundra application developers to implement communication with an XMPP server. (#<a href="https://github.com/realXtend/naali/issues/512">512</a>, #<a href="https://github.com/realXtend/naali/issues/546">546</a>, #<a href="https://github.com/realXtend/naali/issues/537">537</a>)</li>
+    <li>Added the concept of 'Asset Bundles' and implemented support for loading assets from .zip files. (#<a href="https://github.com/realXtend/naali/issues/508">508</a>)</li>
+    <li>Added support for OpenAssetImport assets. This enables Tundra to load assets from the formats listed at http://assimp.sourceforge.net/main_features_formats.html (#<a href="https://github.com/realXtend/naali/issues/509">509</a>, #<a href="https://github.com/realXtend/naali/issues/513">513</a>)</li>
+    <li>Added --noclientphysics and --clientextrapolationtime command line parameters to allow tweaking the rigid body network sync mechanisms.</li>
+    <li>Fixed build issue related to making Debug builds (#<a href="https://github.com/realXtend/naali/issues/507">507</a>)</li>
+    <li>Added a new helper function Scene::FindEntities that performs substring or regex search for entities in the scene. (#<a href="https://github.com/realXtend/naali/issues/237">237</a>)</li>
+    <li>Added support for double-clicking on .txml files on OSX to open them in Tundra. (#<a href="https://github.com/realXtend/naali/issues/526">526</a>)</li>
+    <li>Fixed an issue with very long Windows filenames (#<a href="https://github.com/realXtend/naali/issues/347">347</a>)</li>
+    <li>Fixed an issue with loading manually edited xml scenes with entities with id of 0. (#<a href="https://github.com/realXtend/naali/issues/418">418</a>)</li>
+    <li>Improved the usability of the Entity and Asset Import dialog and other UIs. (#<a href="https://github.com/realXtend/naali/issues/462">462</a>, #<a href="https://github.com/realXtend/naali/issues/527">527</a>, #<a href="https://github.com/realXtend/naali/issues/161">161</a>, #<a href="https://github.com/realXtend/naali/issues/63">63</a>, #<a href="https://github.com/realXtend/naali/issues/461">461</a>)</li>
+    <li>Work around a threading issue in VlcWidget (#<a href="https://github.com/realXtend/naali/issues/486">486</a>)</li>
+    <li>Fix a crash bug when aborting asset transfers.</li>
+    <li>Fix an issue with a Tundra server having more than 255 connected users. (#<a href="https://github.com/realXtend/naali/issues/562">562</a>)</li>
+    <li>Fixed several bad crash bugs related to asset serialization and access from scripts. (#<a href="https://github.com/realXtend/naali/issues/496">496</a>)</li>
+    <li>Added helper functions EC_Camera::ToFrustum and EC_Camera::SetFromFrustum. (#<a href="https://github.com/realXtend/naali/issues/490">490</a>)</li>
+    <li>Enable using '#' sign to delimit subassetnames in asset refs.</li>
+    <li>Added support for handling HTTP 307 Temporary Redirect status code when fetching assets.</li>
+    <li>Fix an issue where deleting a local asset from disk did not actually delete the asset, but only hid the asset from view (#<a href="https://github.com/realXtend/naali/issues/319">319</a>)</li>
+    <li>Fix several issues with EC_Fog not being displayed properly.</li>
+    <li>Fixed a problem with InputAPI::MousePos() not functioning properly. (#<a href="https://github.com/realXtend/naali/issues/402">402</a>)</li>
+    <li>Closed several build system related issues: #<a href="https://github.com/realXtend/naali/issues/505">505</a>, #<a href="https://github.com/realXtend/naali/issues/534">534</a>, #<a href="https://github.com/realXtend/naali/issues/515">515</a>, #<a href="https://github.com/realXtend/naali/issues/316">316</a>, #<a href="https://github.com/realXtend/naali/issues/383">383</a>, #<a href="https://github.com/realXtend/naali/issues/395">395</a>, #<a href="https://github.com/realXtend/naali/issues/504">504</a>, #<a href="https://github.com/realXtend/naali/issues/315">315</a>, #<a href="https://github.com/realXtend/naali/issues/552">552</a>, #<a href="https://github.com/realXtend/naali/issues/555">555</a>, #<a href="https://github.com/realXtend/naali/issues/380">380</a>, #<a href="https://github.com/realXtend/naali/issues/553">553</a>, #<a href="https://github.com/realXtend/naali/issues/558">558</a>, #<a href="https://github.com/realXtend/naali/issues/560">560</a>, #<a href="https://github.com/realXtend/naali/issues/561">561</a></li>
+    <li>Other closed issues: #<a href="https://github.com/realXtend/naali/issues/476">476</a>, #<a href="https://github.com/realXtend/naali/issues/339">339</a>, #<a href="https://github.com/realXtend/naali/issues/497">497</a>, #<a href="https://github.com/realXtend/naali/issues/491">491</a>, #<a href="https://github.com/realXtend/naali/issues/451">451</a>, #<a href="https://github.com/realXtend/naali/issues/393">393</a>, #<a href="https://github.com/realXtend/naali/issues/520">520</a>, #<a href="https://github.com/realXtend/naali/issues/516">516</a>, #<a href="https://github.com/realXtend/naali/issues/230">230</a>, #<a href="https://github.com/realXtend/naali/issues/258">258</a>, #<a href="https://github.com/realXtend/naali/issues/464">464</a>, #<a href="https://github.com/realXtend/naali/issues/80">80</a>, #<a href="https://github.com/realXtend/naali/issues/266">266</a>, #<a href="https://github.com/realXtend/naali/issues/253">253</a>, #<a href="https://github.com/realXtend/naali/issues/465">465</a>, #<a href="https://github.com/realXtend/naali/issues/528">528</a>, #<a href="https://github.com/realXtend/naali/issues/544">544</a>, #<a href="https://github.com/realXtend/naali/issues/158">158</a>, #<a href="https://github.com/realXtend/naali/issues/529">529</a>, #<a href="https://github.com/realXtend/naali/issues/47">47</a>, #<a href="https://github.com/realXtend/naali/issues/236">236</a>, #<a href="https://github.com/realXtend/naali/issues/301">301</a>, #<a href="https://github.com/realXtend/naali/issues/420">420</a>, #<a href="https://github.com/realXtend/naali/issues/556">556</a>, #<a href="https://github.com/realXtend/naali/issues/550">550</a>, #<a href="https://github.com/realXtend/naali/issues/557">557</a></li>
+</ul>
+
+<h2>2.3.3.7</h2>
+<p>Summary</p>
+<ul>
+    <li>New Meshmoon hosting platform launch! Adminotech Tundra client is now Meshmoon Rocket.</li>
+</ul>
+
+<h2>Adminotech Tundra 2.3.3.6</h2>
+<p>Features</p>
+<ul>
+    <li>Scene packager improvements.</li>
+    <li>Crunch texture support.</li>
+    <li>.txml files can now be double clicked on Mac OS X for local preview of the scene.</li>
+    <li>New generated:// protocol for in-memory generated assets. Made AssetRefListener properly handle them. Recommended to use with EC_Material output material name.</li>
+</ul>
+<p>Enhancements</p>
+<ul>
+    <li>Reduce login delay on scenes that were started.</li>
+</ul>
+<p>Bug fixes</p>
+<ul>
+    <li>Fix zip bundles not loading assets properly with non-threaded load path.</li>
+    <li>Fix crash on disconnecting from servers when there are ongoing http transfers.</li>
+    <li>Fix crashes on Mac OS X on debug asserts, disabled from the release build.</li>
+    <li>Fix filter suggestion offset on Mac OS X.</li>
+    <li>Fix random scene tiles showing when focusing search filter or changing pages.</li>
+</ul>
+
+<h2>Adminotech Tundra 2.3.3.5</h2>
+<p>Bug fixes</p>
+<ul>
+    <li>Fix SSL errors on server listing and others after authentication is done.</li>
+    <li>Fix rendering of scenes that rely heavily on in-memory generated material.</li>
+</ul>
+
+<h2>Adminotech Tundra 2.3.3.4</h2>
+<p>Adminotech features</p>
+<ul>
+    <li>New 'Refresh' scene listing button on the top right panel.</li>
+</ul>
+<p>Bug fixes</p>
+<ul>
+    <li>Fix hanging when exitings scenes that has bundle/zip assets.</li>
+</ul>
+
+<h2>Adminotech Tundra 2.3.3.3</h2>
+<p>Adminotech features</p>
+<ul>
+    <li>User pemissions are now enabled. This protects basic users from editing the scene.</li>
+    <li>New layers feature. You can remove/download scene layers from a UI. The layers toggle button will come to the taskbar if the server has layers.</li>
+    <li>New settings for configuring sounds, hiding private scenes in the ui and hiding certain elements of the ui.</li>
+    <li>ZIP asset bundle update. Tundra can now reference to asset inside zip files.</li>
+    <li>Tweaked the paging arrows to be smaller and have nicer positioning depending on the windows size.</li>
+    <li>Fixed all modal dialogs to center to main window. Bug manifester most on multi monitor setups.</li>
+</ul>
+
+<h2>Adminotech Tundra 2.3.3.2</h2>
+<p>Adminotech features</p>
+<ul>
+    <li>EC_StencilGlow: Added 'color' attribute for changing the color on-the-fly of the glow</li>
+    <li>EC_MediaPlayer: Added 'spatial radius' attribute to enable spatial sound for VLC media</li>
+    <li>News and important information is now shown in the clients login screens right column</li>
+    <li>Handle situations better where scene cannot be accessed</li>
+    <li>Open lock icons to inform you if a scene is private (if you see them, you can always access the server)</li>
+    <li>Server listing draw bug fixed if scene name is very long</li>
+    <li><i>Windows release only:</i> Reintroduced LudoCraft Tundra plugins to the Adminotech release</li>
+</ul>
+<p>Generic Tundra features; <a href="https://github.com/realXtend/naali/compare/tundra2.3.3...tundra2.3.3.1">click here to see the differences by commits</a>
+</p>
+<ul>
+    <li>Updated ogre-safe-nocrashes (the Ogre branch Tundra builds against) to stable Ogre 1.8 release.</li>
+    <li>Fixed build system related issues (#<a href="https://github.com/realXtend/naali/issues/451">451</a>, #<a href="https://github.com/realXtend/naali/issues/493">493</a>, #<a href="https://github.com/realXtend/naali/issues/489">489</a>)</li>
+    <li>Fixed an issue with AvatarDescAsset::AddAttachment (#<a href="https://github.com/realXtend/naali/issues/495">495</a>)</li> 
+</ul>
+
+<h2>Adminotech Tundra 2.3.3.1</h2>
+<p>Adminotech features</p>
+<ul>
+    <li>Edit your user profile.</li>
+    <li>New Google authentication support.</li>
+    <li>Link Google/Facebook authentications to a existing Adminotech account via edit profile feature.</li>
+    <li>Rearranged top menu bar menus and items. Additional Applications menu that will show in scene applications.</li>
+    <li>Easily accessible disconnect button added to the in-world toolbar.</li>
+    <li>Auto-update feature moved to Adminotech features as it will be removed from realXtend Tundra.</li>
+    <li>Enhance modal dialog looks, icons/graphics and error reporting.</li>
+    <li>Added direct login feature if you want to login to IP:PORT manually.</li>
+</ul>
+<p>Generic Tundra features</p>
+<ul>
+    <li><EM></EM>C_Camera: Added ViewMatrix() and ProjectionMatrix() which return the view matrix and projection matrix from Ogre::Camera</li>
+</ul>
+
+<h2>Adminotech Tundra 2.3.3</h2>
+<p>Adminotech login interface fixes<br />
+<ul>
+    <li>Fixes a crash bug when disconnecting from a server</li>
+    <li>Show scenes usernames when hovered of click focused on server</li>
+    <li>Remember search filter term after disconnected and refreshed the server list</li>
+    <li>Clear filter term and focus if ESC is pressed while filter has focus.</li>
+</ul>
+<p>v2.3.3 - <a href="https://github.com/realXtend/naali/compare/tundra2.3.2...tundra2.3.3"> click here to see the differences from 2.3.2 to 2.3.3 by commits</a></p>
+<ul>
+    <li>Added new CanvasPlugin, which adds a new component EC_GraphicsViewCanvas. This component allows embedding and interacting with arbitrary Qt UI elements (dialogs, buttons, web browsers, etc.) in the surfaces of 3D objects.</li>
+    <li>Added new demo scene 'Canvas' to demonstrate the EC_GraphicsViewCanvas features.</li>
+    <li>Added libsquish library to allow runtime DXT compression of textures to reduce down memory usage for scenes that were authored in pngs, jpgs or other formats. Controlled by command line parameter now, but to appear as a renderer configuration option. (#<a href="https://github.com/realXtend/naali/issues/450">450</a>)</li>
+    <li>Improved Qt UIs to be more consistent on Mac OS X to the ones on Windows and Linux. (#<a href="https://github.com/realXtend/naali/issues/411">411</a>)</li>
+    <li>Fixed mouse interaction issues in EC_WidgetBillboard. (#<a href="https://github.com/realXtend/naali/issues/441">441</a>)</li>
+    <li>Evolved rex Avatar and Avatar Attachment editors. (#<a href="https://github.com/realXtend/naali/issues/477">477</a>, #<a href="https://github.com/realXtend/naali/issues/443">443</a>, #<a href="https://github.com/realXtend/naali/issues/437">437</a>)</li>
+    <li>Fixed crashes related to ec editor and profiler. (#<a href="https://github.com/realXtend/naali/issues/446">446</a>, #<a href="https://github.com/realXtend/naali/issues/445">445</a>)</li>
+    <li>Fixed issues with exposing Qt input events to QtScript.</li>
+    <li>Fixed a bug with resetting camera aspect ratio when switching between cameras. (#<a href="https://github.com/realXtend/naali/issues/450">450</a>)</li>
+    <li>Added new EC_PhysicsMotor component, which is used to optimize issues with QtScript runtime performance. (#<a href="https://github.com/realXtend/naali/issues/450">450</a>)</li>
+    <li>Fixed raycast to report results against the EC_Terrain component. (#<a href="https://github.com/realXtend/naali/issues/450">450</a>)</li>
+    <li>Fixed InputAPI::MousePos() function to return correct results when mouse is being dragged. (#<a href="https://github.com/realXtend/naali/issues/450">450</a>)</li>
+    <li>Fix issues with VLC video playback. (#<a href="https://github.com/realXtend/naali/issues/468">468</a>)</li>
+    <li>Expose more Mumble VOIP parameters to QtScript. (#<a href="https://github.com/realXtend/naali/issues/468">468</a>)</li>
+    <li>Enable QoS control on Mumble. (#<a href="https://github.com/realXtend/naali/issues/463">463</a>)</li>
+    <li>Fixed issues with Mumble voip. (#<a href="https://github.com/realXtend/naali/issues/453">453</a>)</li>
+    <li>Added support for doing OBB scene queries to bullet physics scene.</li>
+    <li>Added glow post-process option. This differs from generic bloom in that it's possible to apply glow to individual objects, and not only the whole scene.</li>
+    <li>Recompute the rigid body inertia tensors when the body parameters have changed. (#<a href="https://github.com/realXtend/naali/issues/469">469</a>, #<a href="https://github.com/realXtend/naali/issues/475">475</a>)</li>
+    <li>Fixed certain security-related crashes in QtScript array handling.</li>
+    <li>Scene structure "Save as.." no longer writes components marked as 'temporary' to disk. (#<a href="https://github.com/realXtend/naali/issues/482">482</a>)</li>
+    <li>Now immediately unloads all assets from memory and aborts all asset transfers when disconnecting from a server. (#<a href="https://github.com/realXtend/naali/issues/472">472</a>, #<a href="https://github.com/realXtend/naali/issues/480">480</a>)</li>
+    <li>Other closed issues: #<a href="https://github.com/realXtend/naali/issues/320">320</a>, #<a href="https://github.com/realXtend/naali/issues/146">146</a>, #<a href="https://github.com/realXtend/naali/issues/12">12</a>, #<a href="https://github.com/realXtend/naali/issues/157">157</a>, #<a href="https://github.com/realXtend/naali/issues/160">160</a></li>
+</ul>
+</p>
+
+</body>
+</html>
