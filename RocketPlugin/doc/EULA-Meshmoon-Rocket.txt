@@ -1,0 +1,169 @@
+﻿Adminotech Meshmoon Rocket End User License Agreement
+
+This Subscription and End User License Agreement ("Agreement") is made between Adminotech Oy, a Finnish Corporation, with its principal place of business in Mäkelininkatu 15, 90100 Oulu, Finland ("Adminotech"), and you ("You" or "Your") as a user of the Service.
+BY DOWNLOADING AND USING ADMINOTECH MESHMOON ROCKET SOFTWARE OR OTHER ADMINOTECH’S PRODUCTS OR SERVICES, YOU AGREE TO THE FOLLOWING TERMS AND CONDITIONS GOVERNING YOUR USE OF ADMINOTECH MESHMOON SOFTWARE, PRODUCTS OR SERVICES, MORE PARTICULARLY DESCRIBED IN PARAGRAPH 1 BELOW (COLLECTIVELY, THE "SERVICE"). IF YOU ARE A COMPANY, BY  DOWNLOADING AND USING THE SOFTWARE HE/SHE REPRESENTS THAT HE/SHE HAS THE AUTHORITY TO BIND YOU TO THESE TERMS AND CONDITIONS.   
+
+Background
+
+As part of the Service, Adminotech will provide You with use of the Service, including Meshmoon Rocket Client Software for installation on the applicable amount of devices, a Meshmoon Rocket interface and data encryption, transmission, access and storage. Your registration for, or use of, the Service shall be deemed to be Your agreement to abide by this Agreement including any materials available on the Adminotech website incorporated by reference herein, including but not limited to Adminotech’s privacy and security policies. For reference, a Definitions section is included at the end of this Agreement.
+
+1. Service and Functionality Description
+
+Adminotech offers You the Meshmoon hosting service and the related Rocket client software. The service provides a functionality described in the Meshmoon documentation deemed incorporated by reference herein. 
+
+2. Privacy & Security
+
+Adminotech's privacy policy may be obtained upon request. Adminotech reserves the right to modify its privacy policy in its reasonable discretion from time to time. Note that because the Service is a hosted, online application, Adminotech occasionally may need to notify all users of the Service (whether or not they have opted out as described above) of important announcements regarding the operation of the Service.
+
+3. License Grant & Restrictions
+
+(a)	Adminotech hereby grants You a non-exclusive, non-transferable, worldwide right to use the Service, solely for Your own internal business or personal purposes, subject to the terms and conditions of this Agreement. All rights not expressly granted to You are reserved by Adminotech and its licensors. The use of the Service may require use of 3rd party content which may be subject to their own separate license.
+
+(b) 	Except as expressly provided in Sub-section (c) You shall not (i) license, sublicense, sell, resell, transfer, assign, distribute or otherwise commercially exploit or make available to any third party the Service or the Content in any way; (ii) modify or make derivative works based upon the Service or the Content; (iii) create Internet "links" to the Service or "frame" or "mirror" any Content on any other server or wireless or Internet-based device; or (iv) reverse engineer or access the Service in order to (a) build a competitive product or service, (b) build a product using similar ideas, features, functions or graphics of the Service, or (c) copy any ideas, features, functions or graphics of the Service. 
+
+(c) 	Throughout the Initial Term and any renewal Term, You may use the Service only for Your internal business or personal purposes. You shall not, knowingly or deliberately: (i) send spam or otherwise duplicative or unsolicited messages in violation of applicable laws; (ii) send or store infringing, obscene, threatening, libelous, or otherwise unlawful or tortuous material, including material harmful to children or violative of third party privacy rights; (iii) send or store material containing software viruses, worms, Trojan horses or other harmful computer code, files, scripts, agents or programs; (iv)interfere with or disrupt the integrity or performance of the Service or the data contained therein; or (v) attempt to gain unauthorized access to the Service or its related systems or networks. 
+
+4. Your Responsibilities
+
+You are responsible for all activity occurring under Your User accounts and shall abide by all applicable local, state, national and foreign laws, treaties and regulations in connection with Your use of the Service, including those related to data privacy, international communications and the transmission of technical or personal data. You shall: (i) notify Adminotech immediately of any unauthorized use of any password or account or any other known or suspected breach of security; (ii) report to Adminotech immediately and use reasonable efforts to stop immediately any copying or distribution of Content that is known or suspected by You or Your Users; and (iii) not impersonate another Adminotech user or provide false identity information to gain access to or use the Service. 
+
+5. Account Information and Data
+
+Adminotech does not own any data, information or material that You submit to the Service in the course of using the Service ("Customer Data"). You, not Adminotech, shall have sole responsibility for the accuracy, quality, integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use of all Customer Data, and Adminotech shall not be responsible or liable for the deletion, correction, destruction, damage, loss or failure to store any Customer Data. In the event this Agreement is terminated (other than by reason of Your breach), Adminotech will make available to You a file of the Customer Data within 30 days of termination if You so requests at the time of termination. Adminotech reserves the right to withhold, remove and/or discard Customer Data without notice for any breach, including, without limitation, Your non-payment. Upon termination for cause, Your right to access or use Customer Data immediately ceases, and Adminotech shall have no obligation to maintain or forward any Customer Data. In the event of termination of this Agreement (whether for cause or not), if Adminotech does not make the Customer Data available to You, it must remove and delete the same from the Service and all other records.  Adminotech is expressly prohibited from using the Customer Data at any time during or following termination of this Agreement.
+
+6. Intellectual Property Ownership
+
+Adminotech alone (and its licensors, where applicable) shall own all right, title and interest, including all related Intellectual Property Rights, in and to the Meshmoon hosting service and Rocket client Technology, the Content and the Service and any suggestions, ideas, enhancement requests, feedback, recommendations or other information provided by You or any other party relating to the Service. This Agreement is not a sale and does not convey to You any rights of ownership in or related to the Service, the Meshmoon hosting service or Rocket client Technology or the Intellectual Property Rights owned by Adminotech. The Adminotech name, the Adminotech logo, and the product names associated with the Service are trademarks of Adminotech or third parties, and no right or license is granted to use them. 
+
+7. Third Party Interactions
+
+During use of the Service, You may enter into correspondence with, purchase goods and/or services from, or participate in promotions of advertisers or sponsors showing their goods and/or services through the Service. Any such activity, and any terms, conditions, warranties or representations associated with such activity, is solely between You and the applicable third-party. Adminotech and its licensors shall have no liability, obligation or responsibility for any such correspondence, purchase or promotion between You and any such third-party. Adminotech does not endorse any sites on the Internet that are linked through the Service. Adminotech provides these links to You only as a matter of convenience, and in no event shall Adminotech or its licensors be responsible for any content, products, or other materials on or available from such sites. Adminotech provides the Service to You pursuant to the terms and conditions of this Agreement. You recognize, however, that certain third-party providers of ancillary software, hardware or services may require Your agreement to additional or different license or other terms prior to Your use of or access to such software, hardware or services. 
+
+8. Charges and Payment of Fees
+
+You shall pay all fees or charges to Your account in accordance with the fee and payment schedule "http://www.meshmoon.com/Pricing.aspx". You are responsible for paying for all User licenses ordered for the entire License Term, whether or not such User licenses are actively used. You must provide Adminotech with approved purchase order information as a condition to signing up for the Service. All pricing terms are confidential, and You agree not to disclose them to any third party.
+
+9. Support Services.
+
+Software Maintenance and Support Services:
+
+(A) Software Maintenance -- For as long as You are current with your annual payments specified in Attachment A, Adminotech will provide You with the following services:
+
+    1. Error corrections. Adminotech will use reasonable efforts to correct (e.g., by providing a workaround or an Error correction) verified Errors with a level of effort commensurate with the severity of the Error.  Adminotech is not, however, obligated to correct all Errors.
+
+    2. Maintenance Upgrades. Within a reasonable time after general commercial publication, Adminotech will make available to Licensee one copy of all Maintenance Releases and all corrections to the associated Documentation.  
+
+(B) Support Services – Adminotech will make reasonable endeavors to answer all calls/e-mails immediately but in any case will acknowledge a request within two (2) hours of receiving the call/e-mail (restricted to between 9am and 5pm Monday to Friday CET+2, excluding bank and other public holidays).
+
+10. Billing and Renewal
+
+When agreed, Adminotech may charge and collect in advance for use of the Service. Adminotech will then automatically renew and You will be issued an invoice. The renewal charge will be in accordance with the Renewal Fee set out in payment schedule "http://www.meshmoon.com/Pricing.aspx". 
+
+If needed, You agree to provide Adminotech with complete and accurate billing and contact information. This information includes Your legal company name, street address, e-mail address, and name and telephone number of an authorized billing contact and License Administrator. You agree to update this information within 30 days of any change to it. If the contact information You have provided is false or fraudulent, Adminotech reserves the right to terminate Your access to the Service in addition to any other legal remedies. 
+
+Unless Adminotech in its discretion determines otherwise, entities will be billed in Euros.
+
+If You believe Your bill is incorrect, You must contact Adminotech in writing within 60 days of the invoice date of the invoice containing the amount in question to be eligible to receive an adjustment or credit.
+
+11. Non-Payment and Suspension
+
+In addition to any other rights granted to Adminotech herein, Adminotech reserves the right to suspend or terminate this Agreement and Your access to the Service if Your account becomes delinquent (falls into arrears). Delinquent invoices (accounts in arrears) are subject to interest of 1.0% per month on any outstanding balance, or the maximum permitted by law, whichever is less, plus all expenses of collection reasonably incurred. You will continue to be charged for User licenses during any period of suspension. If Adminotech initiates termination of this Agreement for breach by You, You will be obligated to pay the balance due on Your account computed in accordance with the Charges and Payment of Fees section above. You agree that Adminotech may bill You for such unpaid fees.
+
+Adminotech reserves the right to impose a reconnection fee in the event You are suspended and thereafter request access to the Service. You agree and acknowledge that Adminotech has no obligation to retain Customer Data and that such Customer Data may be irretrievably deleted if Your account is 30 days or more delinquent.
+
+12. Termination upon Expiration/Reduction in Number of Licenses
+
+This Agreement commences on the Effective Date. This agreement will automatically renew for successive one year periods (each a ‘Renewal Term’) subject to payment of the Renewal Fee, unless You otherwise notify Adminotech in writing of Your intention not to renew within thirty (30) days of the anniversary of the then current term. After the Initial Term, either party may terminate this Agreement for convenience upon sixty (60) days written notice. If You or Adminotech terminates the Agreement for convenience during a Renewal Term, You will be refunded the pro-rated portion of the license fees covering the remainder of that Term.  In the event this Agreement is terminated (other than by reason of Your breach), Adminotech will make available to You a file of the Customer Data within 30 days of termination if You so request at the time of termination. You and Adminotech agree and acknowledge that Adminotech has no right or obligation to retain the Customer Data following such termination, but Adminotech shall remove and delete such Customer Data within 60 days after termination, unless it has failed to provide such Customer Data following Your timely request. 
+
+13. Termination for Cause 
+
+Any breach of Your payment obligations or unauthorized use of the Adminotech Technology or Service will be deemed a material breach of this Agreement. Adminotech, in its sole discretion, may terminate Your password, account or use of the Service if You breach or otherwise fail to comply with this Agreement. In addition, Adminotech may terminate a free account at any time in its sole discretion. You and Adminotech agree and acknowledge that Adminotech has no right or obligation to retain the Customer Data following termination, but Adminotech shall remove and delete such Customer Data, if You have materially breached this Agreement, including but not limited to failure to pay outstanding fees, and such breach has not been cured within 30 days of written notice of such breach.
+
+14. Representations & Warranties
+
+Each party represents and warrants that it has the legal power and authority to enter into this Agreement. Adminotech represents and warrants that it will provide the Service in a manner consistent with general industry standards reasonably applicable to the provision thereof and that the Service will perform substantially in accordance with the Adminotech product documentation under normal use and circumstances. You represent and warrant that You have not falsely identified Yourself nor provided any false information to gain access to the Service and that Your billing information is correct.
+
+15. Mutual Indemnification
+
+(a)	You shall indemnify and hold Adminotech, its licensors and each such party's parent organizations, subsidiaries, affiliates, officers, directors, employees, attorneys and agents harmless from and against any and all claims, costs, damages, losses, liabilities and expenses (including attorneys' fees and costs) arising out of or in connection with: (i) a claim alleging that use of the Customer Data infringes the rights of, or has caused harm to, a third party; (ii) a claim, which if true, would constitute a violation by You of Your representations and warranties; or (iii) a claim arising from the breach by You or Your Users of this Agreement, provided in any such case that Adminotech (a) gives written notice of the claim promptly to You; (b) gives You sole control of the defense and settlement of the claim (provided that You may not settle or defend any claim unless You unconditionally release Adminotech of all liability and such settlement does not affect Adminotech's business or Service); (c) provides to You all available information and assistance; and (d) has not compromised or settled such claim.
+
+(b)	Adminotech shall indemnify and hold You and Your parent organizations, subsidiaries, affiliates, officers, directors, employees, attorneys and agents harmless from and against any and all claims, costs, damages, losses, liabilities and expenses (including attorneys' fees and costs) arising out of or in connection with: (i) a claim alleging that the Service directly infringes a copyright, a patent issued as of the Effective Date, or a trademark of a third party; (ii) a claim, which if true, would constitute a violation by Adminotech of its representations or warranties; or (iii) a claim arising from breach of this Agreement by Adminotech; provided that You (a) promptly give written notice of the claim to Adminotech; (b) give Adminotech sole control of the defense and settlement of the claim (provided that Adminotech may not settle or defend any claim unless it unconditionally releases You of all liability); (c) provide to Adminotech all available information and assistance; and (d) have not compromised or settled such claim. Adminotech shall have no indemnification obligation, and You shall indemnify Adminotech pursuant to this Agreement, for claims arising from any infringement arising from the combination of the Service with any of Your products, service, and hardware or business process. 
+
+16. Disclaimer of Warranties
+
+ADMINOTECH AND ITS LICENSORS MAKE NO REPRESENTATION, WARRANTY, OR GUARANTEE AS TO THE RELIABILITY, TIMELINESS, QUALITY, SUITABILITY, TRUTH, AVAILABILITY, ACCURACY OR COMPLETENESS OF THE SERVICE OR ANY CONTENT. ADMINOTECH AND ITS LICENSORS DO NOT REPRESENT OR WARRANT THAT (A) THE USE OF THE SERVICE WILL BE SECURE, TIMELY, UNINTERRUPTED OR ERROR-FREE OR OPERATE IN COMBINATION WITH ANY OTHER HARDWARE, SOFTWARE, SYSTEM OR DATA, (B) THE SERVICE WILL MEET YOUR REQUIREMENTS OR EXPECTATIONS, (C) ANY STORED DATA WILL BE ACCURATE OR RELIABLE, (D) THE QUALITY OF ANY PRODUCTS, SERVICES, INFORMATION, OR OTHER MATERIAL PURCHASED OR OBTAINED BY YOU THROUGH THE SERVICE WILL MEET YOUR REQUIREMENTS OR EXPECTATIONS, (E) ERRORS OR DEFECTS WILL BE CORRECTED, OR (F) THE SERVICE OR THE SERVER(S) THAT MAKE THE SERVICE AVAILABLE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. THE SERVICE AND ALL CONTENT IS PROVIDED TO YOU STRICTLY ON AN "AS IS" BASIS. ALL CONDITIONS, REPRESENTATIONS AND WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT OF THIRD PARTY RIGHTS, ARE HEREBY DISCLAIMED TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW BY ADMINOTECH AND ITS LICENSORS.
+
+17. Internet Delays
+
+ADMINOTECH'S SERVICES MAY BE SUBJECT TO LIMITATIONS, DELAYS, AND OTHER PROBLEMS INHERENT IN THE USE OF THE INTERNET AND ELECTRONIC COMMUNICATIONS. ADMINOTECH IS NOT RESPONSIBLE FOR ANY DELAYS, DELIVERY FAILURES, OR OTHER DAMAGE RESULTING FROM SUCH PROBLEMS. 
+
+18. Limitation of Liability
+
+IN NO EVENT SHALL EITHER PARTY'S AGGREGATE LIABILITY EXCEED THE AMOUNTS ACTUALLY PAID BY AND/OR DUE FROM YOU IN THE SIX (6) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO SUCH CLAIM. IN NO EVENT SHALL EITHER PARTY AND/OR ITS LICENSORS BE LIABLE TO ANYONE FOR ANY INDIRECT, PUNITIVE, SPECIAL, EXEMPLARY, INCIDENTAL, CONSEQUENTIAL OR OTHER DAMAGES OF ANY TYPE OR KIND (INCLUDING LOSS OF DATA, REVENUE, PROFITS, USE OR OTHER ECONOMIC ADVANTAGE) ARISING OUT OF, OR IN ANY WAY CONNECTED WITH THIS SERVICE, INCLUDING BUT NOT LIMITED TO THE USE OR INABILITY TO USE THE SERVICE, OR FOR ANY CONTENT OBTAINED FROM OR THROUGH THE SERVICE, ANY INTERRUPTION, INACCURACY, ERROR OR OMISSION, REGARDLESS OF CAUSE IN THE CONTENT, EVEN IF THE PARTY FROM WHICH DAMAGES ARE BEING SOUGHT OR SUCH PARTY'S LICENSORS HAVE BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+19. Additional Rights
+
+Certain states and/or jurisdictions do not allow the exclusion of implied warranties or limitation of liability for incidental, consequential or certain other types of damages, so the exclusions set forth above may not apply to You.
+
+20. Notice
+
+Adminotech may give non-legal notice (i.e., notice regarding program changes and other updates to customer benefits that are not material terms of this Agreement) by means of a general notice on the Service provided to all Adminotech’s customers or electronic mail to Your e-mail address on record in Adminotech's account information.  Such notice shall be deemed to have been given 12 hours after sending (if sent by email), provided that no bounce-back message or delivery error notice is returned in such period.  Adminotech must provide written notice for legal purposes (including any proposed changes to the terms and conditions set forth in this Agreement) to You by first class mail or pre-paid post to Your address. Legal notice shall be deemed to have been given upon the expiration of 48 hours after mailing or posting (when sent by first class mail or pre-paid post). You may give notice to Adminotech. Legal notice shall be deemed to have been given upon the expiration of 48 hours after mailing, posting at any time by any of the following: letter delivered by nationally recognized overnight delivery service or first class postage prepaid mail to Adminotech at the following addresses (whichever is appropriate): Adminotech Oy, Hakamaantie 18, 90440 Kempele, Finland.
+
+21. Modification to Terms
+
+Adminotech reserves the right to modify the terms and conditions of this Agreement or its policies relating to the Service at any time, effective upon posting of an updated version of this Agreement on the Service. You are responsible for regularly reviewing this Agreement. Continued use of the Service after any such changes shall constitute Your consent to such changes. 
+
+22. Assignment; Change in Control
+
+This Agreement may not be assigned by You without the prior written approval of Adminotech.  Notwithstanding the foregoing, this Agreement may be assigned by either party without the other party’s consent to (i) a parent or subsidiary, (ii) an acquirer of all or substantially of all of the assigning party’s assets, or (iii) a successor by merger, acquisition or act of law.  Any purported assignment in violation of this section shall be void.  Any actual or proposed change in control of You that results or would result in a direct competitor of Adminotech directly or indirectly owning or controlling 50% or more of You shall entitle Adminotech to terminate this Agreement for cause immediately upon written notice.
+
+23. Confidential Information
+a. Confidential Information.  Each party acknowledges that by reason of its relationship with the other party hereunder, such party (the "Receiving Party") might have access to the other party’s (the "Disclosing Party") Confidential Information.  The Receiving Party acknowledges and agrees that the Disclosing Party’s Confidential Information is of substantial value to the Disclosing Party, which value would be harmed if such information were disclosed to third parties.  The Receiving Party agrees that it accord the Disclosing Party’s Confidential Information the same degree and methods of protection as it accords its own Confidential Information and will not (i) use the Disclosing Party’s Confidential Information in any way, except in the performance of its obligations under this Agreement; or (ii) disclose such Confidential Information to any third party, except to its employees who need to know such information, provided such employees have signed a confidentiality agreement with terms no less restrictive than the terms in this Agreement.  The Receiving Party will not publish in any form the Disclosing Party’s Confidential Information beyond any descriptions published by the Disclosing Party.  Confidential Information may be disclosed pursuant to applicable law, regulations or court order, provided that the Receiving Party provides prompt advance notice thereof to enable the Disclosing Party to seek protective order or otherwise prevent such disclosure.
+b. Return of Confidential Information.  The Confidential Information of a Disclosing Party is and shall remain the Disclosing Party’s property.  In the event of any termination or expiration of this Agreement:  (i) the Receiving Party shall promptly, and, in any event within five (5) days after being so requested by the Disclosing Party, return to the Disclosing Party all of the Disclosing Party’s Confidential Information in tangible form that is within the possession or control of the Receiving Party; and (ii) except to the extent the Receiving Party is advised in writing by counsel that it is prohibited by law from so doing, the Receiving Party will also destroy all written material, memoranda, notes and other writings or recordings whatsoever prepared by it or its representatives based upon, containing or otherwise reflecting any Confidential Information.  Any Confidential Information that is not returned or destroyed, including, without limitation, any oral Confidential Information, shall remain subject to the confidentiality obligations set forth in this Agreement.
+
+24. General
+
+This Agreement shall be governed by the laws of Finland.  
+No text or information set forth on any other purchase order, preprinted form or document (other than an Order Form, if applicable) shall add to or vary the terms and conditions of this Agreement. If any provision of this Agreement is held by a court of competent jurisdiction to be invalid or unenforceable, then such provision(s) shall be construed, as nearly as possible, to reflect the intentions of the invalid or unenforceable provision(s), with all other provisions remaining in full force and effect. No joint venture, partnership, employment, or agency relationship exists between You and Adminotech as a result of this agreement or use of the Service. The failure of Adminotech to enforce any right or provision in this Agreement shall not constitute a waiver of such right or provision unless acknowledged and agreed to by Adminotech in writing. This Agreement, together with any applicable Order Form, comprises the entire agreement between You and Adminotech and supersedes all prior or contemporaneous negotiations, discussions or agreements, whether written or oral, between the parties regarding the subject matter contained herein.
+
+25. Definitions
+
+As used in this Agreement and in any Order Forms now or hereafter associated herewith:
+
+a. "Agreement" means this fully executed agreement, any Order Forms, whether written or submitted online, and any materials available on the Adminotech website specifically incorporated by reference herein.  The materials may be updated by Adminotech from time to time in its sole discretion provided that for their inclusion in this Agreement by reference, Adminotech notifies You in writing of any changes and permits You to agree or terminate the Agreement, in which latter case, You shall be entitled to a pro-rated refund for any remaining portion of a paid up Term, without penalty or offset; 
+
+b. "Confidential Information" means a party’s business, its financial, business and technical plans and strategies, inventions, products, new products or services, trade secrets, know how, and technology that the Disclosing Party does not make generally available to the public.  For Supplier, Pilot Customer identifying information and details, personal identifying in formation of any Supplier, Supplier customer (and the customers of Supplier customers), Supplier’s software products and related documentation, Supplier’s use of the Device Client Software, the purpose behind Supplier’s use of the Device Client Software are all Confidential Information.  In addition, the terms and conditions set forth in this Agreement shall be Confidential Information.  Confidential Information does not include any information that the Receiving Party can demonstrate by written records: (i) was known to the Receiving Party prior to its disclosure hereunder by the Disclosing Party; (ii) was independently developed by the Receiving Party; (iii) is or becomes publicly known through no wrongful act of the Receiving Party; (iv) has been rightfully received from a third party whom the Receiving Party has reasonable grounds to believe is authorized to make such disclosure without restriction; or (v) has been approved for public release by the Disclosing Party’s prior written authorization.  
+
+c. "Content" means the audio and visual information, documents, software, products and services contained or made available to You in the course of using the Service;
+
+d. "Customer Data" means any data, information or material provided or submitted by You or User to the Service in the course of using the Service;
+
+e. "Device Client Software" means any or all of the Adminotech Backup, Adminotech Update and Adminotech Remote clients on a single device, such that a single device with any or all of the clients installed upon it shall be deemed to comprise one licensed instance of the Device Client Software;
+
+f. "Effective Date" means the date this Agreement is accepted by starting to use the Service;
+
+g. "Initial Term" means the period  commencing on the Effective Date;
+
+h.  "Intellectual Property Rights" means unpatented inventions, patent applications, patents, design rights, copyrights, trademarks, service marks, trade names, domain name rights, mask work rights, know-how and other trade secret rights, and all other intellectual property rights, derivatives thereof, and forms of protection of a similar nature anywhere in the world;
+
+i. "License Administrator(s)" means those Users designated by You who are authorized to purchase licenses using the written Order Forms and create User accounts and otherwise administer Your use of the Service; 
+
+j. "License Term(s)" means the period(s) during which a specified number of Users are licensed to use the Service pursuant to the Order Form(s);
+
+k. "Order Form(s)" means the form evidencing the initial subscription for the Service and any subsequent order forms submitted online or in written form, specifying, among other things, the number of licenses and other services contracted for, the applicable fees, the billing period, and other charges as agreed to between the parties, each such Order Form to be incorporated into and to become a part of this Agreement (in the event of any conflict between the terms of this Agreement and the terms of any such Order Form, the terms of this Agreement shall prevail);
+
+l.  "Online Order Center" means Adminotech's online application that allows the License Administrator designated by You to, among other things, add additional Users to the Service; 
+
+m. "Adminotech" means collectively Adminotech Oy;
+
+n. "Adminotech Technology" means all of Adminotech's proprietary technology (including software, hardware, products, processes, algorithms, user interfaces, know-how, techniques, designs and other tangible or intangible technical material or information) made available to You by Adminotech in providing the Service;
+
+o. "Service(s)" means the specific edition of Adminotech's online device management, billing, data analysis, or other corporate services identified during the ordering process, developed, operated, and maintained by Adminotech, accessible via http://www.adminotech.com or another designated web site or IP address, or ancillary online or offline products and services provided to You by Adminotech, to which You are being granted access under this Agreement, including the Adminotech Technology and the Content; 
+
+p. "User(s)" means Your employees, representatives, consultants, contractors or agents, resellers and Pilot Customers who are authorized to use the Service and have been supplied user identifications and passwords by You (or by Adminotech at Your request).
+
+q. "Authorized Reseller" means a business entity authorized by Adminotech’s Reseller Agreement or as delegated under a valid and Adminotech approved subagent agreement of an authorized Adminotech Reseller.
+
+
+Questions or Additional Information:
+If You have questions regarding this Agreement or wish to obtain additional information, please send an e-mail to meshmoon@meshmoon.com 

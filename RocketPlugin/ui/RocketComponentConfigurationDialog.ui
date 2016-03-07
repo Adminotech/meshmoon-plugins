@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RocketComponentConfigurationDialog</class>
+ <widget class="QWidget" name="RocketComponentConfigurationDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>283</width>
+    <height>42</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#RocketComponentConfigurationDialog {
+	border: 1px solid gray;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(245, 246, 247, 255));
+}
+
+QSpinBox, QDoubleSpinBox {
+	min-height: 20px;
+	max-height: 20px;
+}
+
+QLabel, QCheckBox, QRadioButton {
+	font-family: &quot;Arial&quot;;
+	font-size: 13px;
+	color: rgb(100,100,100);
+	font-weight: bold;
+}
+
+QCheckBox {
+	font-size: 22px;
+	font-weight: bold;
+	color: rgb(243,154,41);
+}
+
+QCheckBox:hover {
+	color: rgb(229, 138, 34);
+}
+
+QCheckBox:pressed {
+	color: rgb(243,154,41);
+}
+
+QCheckBox::indicator {
+	width: 20px;
+	height: 20px;
+}
+
+QCheckBox::indicator:unchecked {
+	image: url(:/images/icon-x-32x32.png);
+ }
+
+QCheckBox::indicator:checked {
+	image: url(:/images/icon-checked-ball-32x32.png);
+ }
+
+QLabel, QCheckBox, QPushButton {
+	font-family: &quot;Arial&quot;;
+	font-weight: bold;
+}
+
+QLabel#labelTitle {
+	font-size: 22px;
+	color: rgb(243,154,41);
+}
+
+QPushButton {
+	min-height: 25px;
+	min-width: 150px;
+	font-size: 10t;
+	border: 1px solid grey;
+	color: rgb(100,100,100);
+	border-radius: 3px;
+	/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(245, 246, 247, 255));*/
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(245, 246, 247, 255));
+}
+
+QPushButton:disabled {
+	background-color: rgb(220, 220, 220);
+    color: rgb(150, 150, 150);
+}
+
+QPushButton:disabled:unchecked {
+	background-color: rgb(220, 220, 220);
+    color: rgb(150, 150, 150);
+}
+
+QPushButton:disabled:checked {
+	background-color: rgb(200, 200, 200);
+	color: rgb(125, 125, 125);
+}
+
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(222, 224, 223, 255), stop:1 rgba(245, 246, 247, 255));
+}
+
+QPushButton:pressed {
+	border: 1px solid rgb(50,50,50);
+}
+
+QPushButton:checked {
+	color: white;
+	background-color: rgb(243,154,41);
+ }
+
+QPushButton#buttonClose {
+	min-height: 18px;
+	max-height: 18px;
+	min-width: 18px;
+	max-width: 18px;
+	background-color: transparent;
+	border: 0px;
+}
+
+QPushButton#buttonClose::hover {
+	
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.6, fx:0.506, fy:0.5, stop:0 rgb(243,154,41), stop:1 rgba(247, 247, 247, 0));
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="labelTitle">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonClose">
+       <property name="toolTip">
+        <string>Close</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="RocketPlugin.qrc">
+         <normaloff>:/images/icon-exit-darkgrey-32x32.png</normaloff>:/images/icon-exit-darkgrey-32x32.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="contextWidgetLayout"/>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="RocketPlugin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

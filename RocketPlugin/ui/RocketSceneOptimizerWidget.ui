@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RocketSceneOptimizerWidget</class>
+ <widget class="QWidget" name="RocketSceneOptimizerWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>651</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Scene Packager</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#RocketSceneOptimizerWidget {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(245, 246, 247, 255));
+}
+
+QComboBox#comboBoxMaxTexSize, #comboBoxRescaleMode, #comboBoxTextureFormat, #comboBoxTextureMipmapGeneration {
+	min-width: 150px;
+	max-width: 150px;
+}
+
+QLabel {
+	font-family: &quot;Arial&quot;;
+	font-size: 13px;
+	font-weight: bold;
+	color: rgb(80,80,80);
+}
+
+QLabel:disabled {
+	color: rgba(80,80,80, 150);
+}
+
+QCheckBox:disabled {
+	background-color: rgba(80,80,80, 50);
+}
+
+QLabel#labelCompressionTitle, #labelTexturesTitle, #labelOptionsTitle {
+	font-size: 16px;
+	font-weight: bold;
+	/*color: rgb(243,154,41);*/
+	/*color:rgb(7,131,172);*/
+	color:rgb(8,149,195);
+	padding-bottom: 5px;
+}
+
+QLabel#labelTitleOne, QLabel#labelTitleTwo {
+	font-size: 24px;
+	font-weight: bold;
+	color: rgb(70, 70, 70);
+}
+
+QPushButton#buttonStartProcessing, #pushButtonLogDock, #buttonStop {
+	font-family: &quot;Arial&quot;;
+	font-size: 16px;
+	min-height: 25px;
+	border-radius: 3px;
+	color: rgb(66, 66, 66);
+
+	border: 1px solid rgb(190, 190, 190);
+	background-color: rgb(245, 245, 245);
+}
+
+QPushButton#pushButtonLogDock {
+	font-size: 13px;
+	font-weight: bold;
+	border: 1px solid rgb(190, 190, 190);
+	background-color: rgb(245, 245, 245);
+}
+
+QPushButton#buttonStop {
+	font-size: 13px;
+	font-weight: bold;
+	color: rgb(250,250,250);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(248, 82, 82, 150), stop:0.448864 rgba(239, 125, 125, 150), stop:1 rgba(248, 61, 61, 150));
+}
+
+QPushButton#buttonStop:hover {
+	border: 1px solid rgba(104, 104, 104, 225);
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(248, 82, 82, 250), stop:0.448864 rgba(239, 125, 125, 250), stop:1 rgba(248, 61, 61, 150));
+}
+
+QPushButton#buttonStartProcessing:disabled {
+	color: rgb(172, 172, 172);
+}
+
+QPushButton#buttonStartProcessing:checked {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 233, 0, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton#buttonStartProcessing:hover, #pushButtonLogDock:hover {
+	border: 1px solid grey;
+}
+
+QPushButton#buttonStartProcessing:pressed, #pushButtonLogDock:pressed {
+	color: black;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(238, 238, 238, 255), stop:0.5 rgba(255, 255, 255, 255));
+}
+
+QPushButton#buttonStartProcessing:disabled {
+	color: green;
+}
+
+QCheckBox {
+	font-family: &quot;Arial&quot;;
+	font-size: 13px;
+	font-weight: bold;
+	color: rgb(80,80,80);
+}
+
+QCheckBox:hover {
+	color: rgb(50,50,50);
+}
+
+QCheckBox::indicator:unchecked {
+	image: url(:/images/icon-unchecked.png);
+ }
+
+QCheckBox::indicator:checked {
+	image: url(:/images/icon-checked.png);
+ }
+
+QPushButton#buttonBrowseOutputDir, #buttonBrowseDDSConverter {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url(:/images/icon-folder.png);
+	min-width: 24px;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayoutMain">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="horizontalSpacing">
+        <number>10</number>
+       </property>
+       <item row="1" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="outputDirectoryLineEdit">
+           <property name="toolTip">
+            <string>Ouput directory for all processing. Temporary file structures and end result txml and zip files will be stored here.</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonBrowseOutputDir">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>24</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Browser for output directory</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton { border: 0px; background-color: transparent; min-height: 20px; max-height: 20px; }</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="labelOptionsTitle">
+         <property name="text">
+          <string>Options</string>
+         </property>
+         <property name="indent">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="outputDirectoryLabel">
+         <property name="toolTip">
+          <string>Ouput directory for all processing. Temporary file structures and end result txml and zip files will be stored here.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">padding-left: 15px;</string>
+         </property>
+         <property name="text">
+          <string>Working directory</string>
+         </property>
+         <property name="indent">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="labelResizeTex">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Resize textures that go over a certain pixel size. Keep original wont resize any files. For this to work you need to provide a valid DDS converter to its input field above.</string>
+           </property>
+           <property name="text">
+            <string>Resize</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxMaxTexSize">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>156</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>156</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Resize textures that go over a certain pixel size. Keep original wont resize any files. For this to work you need to provide a valid DDS converter to its input field above.</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-left: 4px;</string>
+           </property>
+           <property name="currentIndex">
+            <number>3</number>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Keep original size</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Max 4096x4096</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Max 2048x2048</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Max 1024x1024</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Max 512x512</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Max 256x256</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Max 128x128</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Max 64x64</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Max 32x32</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelRescaleTex">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>Rescale texture widht and height if non-power of two. This will resize height and widht individually if they are not 128, 256, 512 ,1024 etc.</string>
+           </property>
+           <property name="text">
+            <string>Rescale</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxRescaleMode">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>156</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>156</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Rescale texture widht and height if non-power of two. This will resize height and widht individually if they are not 128, 256, 512 ,1024 etc.</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-left: 4px;</string>
+           </property>
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Keep original scale</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Nearest power of 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Previous power of 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Next power of 2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelTexturesTitle">
+         <property name="text">
+          <string>Textures</string>
+         </property>
+         <property name="indent">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QCheckBox" name="bundleMeshesCheckBox">
+         <property name="toolTip">
+          <string>Put all EC_Mesh mesh references inside zip files.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">padding-left: 15px;</string>
+         </property>
+         <property name="text">
+          <string>Bundle meshes</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="bundlePrefixLineEdit">
+           <property name="toolTip">
+            <string>Prefix for zip bundle file names. This field can be left empty.</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="bundleSplitSizeLabel">
+           <property name="minimumSize">
+            <size>
+             <width>105</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Maximum file size on disk after we split to the next zip file. Note that this is not the end result zip size but the size that will be compressed to a single zip.</string>
+           </property>
+           <property name="text">
+            <string>Zip split size</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBoxSplitSize">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>119</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Maximum file size on disk after we split to the next zip file. Note that this is not the end result zip size but the size that will be compressed to a single zip.</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="suffix">
+            <string> mb</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>10000</number>
+           </property>
+           <property name="value">
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="12" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="bundleMaterialsCheckBox">
+           <property name="toolTip">
+            <string>Put all EC_Mesh material references inside zip files.</string>
+           </property>
+           <property name="text">
+            <string>Bundle materials</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="bundleEC_MaterialCheckBox">
+           <property name="toolTip">
+            <string>Put all EC_Material parameterized texture references inside zip files. Additionally will convert all EC_Material outputMaterial values to generated://&lt;ref&gt;</string>
+           </property>
+           <property name="text">
+            <string>Bundle generated materials</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="11" column="0">
+        <spacer name="verticalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>1</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="14" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="chekBoxProcessContentToolsEnts">
+           <property name="toolTip">
+            <string>Process Adminotech Content Tools entities. Means that all content tools image frames textures will be put into zip files. Recommended to uncheck if you are not sure.</string>
+           </property>
+           <property name="text">
+            <string>Process content tools entities</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBoxRewriteAssetRefs">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Rewrite all bundled asset references. This will assing a unique ID as filename for all assets. Useful if your original URL asset refs are very long. Very long asset references can cause problems on certain operating systems on file handling.</string>
+           </property>
+           <property name="text">
+            <string>Rewrite asset references</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="14" column="0">
+        <widget class="QCheckBox" name="checkBoxProcessScriptEnts">
+         <property name="toolTip">
+          <string>Process entities that have EC_Script component. If not checked any entity will be skipped if it has EC_Script, even if it would have EC_Mesh etc.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">padding-left: 15px;</string>
+         </property>
+         <property name="text">
+          <string>Process script entities</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QCheckBox" name="checkBoxLogDebug">
+         <property name="toolTip">
+          <string>Log detailed information to the console while processing.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">padding-left: 15px;</string>
+         </property>
+         <property name="text">
+          <string>Verbose logging</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <property name="rightMargin">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="removeEmptyEntitiesCheckBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>Deletes all entities from the scene that don't have any components in them. This is purely for cleaning scenes that have &quot;dead&quot; entities in them. Use with caution, this is the only option that will actually remove entities from the scene. Nothing in this tool will ever add entities/components to the scene.</string>
+           </property>
+           <property name="text">
+            <string>Remove empty entities</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="checkBoxProcessTextures">
+         <property name="toolTip">
+          <string>Convert all encountered non DDS textures to DDS. Image will be detected for alpha, if there is alpha DXT5 is used, otherwise DXT1.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">padding-left: 15px;</string>
+         </property>
+         <property name="text">
+          <string>Process textures</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelCompressionTitle">
+         <property name="text">
+          <string>Compression</string>
+         </property>
+         <property name="indent">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>1</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="bundlePrefixLabel">
+         <property name="toolTip">
+          <string>Prefix for zip bundle file names. This field can be left empty.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">padding-left: 15px;</string>
+         </property>
+         <property name="text">
+          <string>Zip name prefix</string>
+         </property>
+         <property name="indent">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="labelTexFormat">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>CRN = Tundra supported format. Compresses DDS data to a very small file without significant loss of quality. Very fast decompression. [Recommended]
+DDS = Tundra supported format. Good compresses to zip but produces big files that equals bigger download times.</string>
+           </property>
+           <property name="text">
+            <string>Format</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxTextureFormat">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>156</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>156</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>CRN = Tundra supported format. Compresses DDS data to a very small file without significant loss of quality. Very fast decompression. [Recommended]
+DDS = Tundra supported format. Good compresses to zip but produces big files that equals bigger download times.</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-left: 4px;</string>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>CRN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>DDS</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelTexQuality">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>Texture quality from 0 to 255</string>
+           </property>
+           <property name="text">
+            <string>Quality</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBoxTextureQuality">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>78</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Texture quality from 0 to 255</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="suffix">
+            <string/>
+           </property>
+           <property name="prefix">
+            <string/>
+           </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>255</number>
+           </property>
+           <property name="singleStep">
+            <number>5</number>
+           </property>
+           <property name="value">
+            <number>200</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <property name="spacing">
+          <number>7</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="labelTexMipmaps">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Mipmap generation mode.</string>
+           </property>
+           <property name="text">
+            <string>Mipmaps</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxTextureMipmapGeneration">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>156</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>156</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Mipmap generation mode</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-left: 4px;</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Generate</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Use existing</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Remove mipmaps</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelTexMaxMipmap">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mipmap level generation from 1 to 16. Note that this is the maximum, the texture tool will automatically adjust mipmap levels to a suitable value with the texture size that it is processing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>Max mipmaps</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBoxTextureMaxMipmaps">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>78</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mipmap level generation from 1 to 16. Note that this is the maximum, the texture tool will automatically adjust mipmap levels to a suitable value with the texture size that it is processing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="suffix">
+            <string/>
+           </property>
+           <property name="prefix">
+            <string/>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>16</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <number>16</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="8" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>1</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>1</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayoutLogging">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPlainTextEdit" name="log">
+       <property name="font">
+        <font>
+         <family>Courier New</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="plainText">
+        <string>Scene optimizer will bundle all your world assets into zip files. This will result in faster scene loading due to the decrease in individual asset requests and download size from the web.
+
+The tool can also optimize textures to CRN or DDS formats. It can also be ran with maximum size, power of 2 conversion, quality and mipmap options.
+
+Hover over the fields to get more information about the setting. Hit Run to start the processing.
+
+This log will provide information about the progress and about errors/warning. You will also receive futher instructions after the scene has been processed to complete the optimization run.</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="logProgress">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>22</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>22</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Courier New</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel#logProgress {
+	background-color: rgb(240,240,250);
+	border: 1px solid grey;
+	border-top: 0px;
+	font-family: &quot;Courier New&quot;;
+	font-size: 13px;
+	font-weight: bold;
+	color: green;
+	padding-left: 3px;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="indent">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButtonLogDock">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>27</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Undock Log</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonStop">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>27</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>STOP</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonStartProcessing">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Run</string>
+       </property>
+       <property name="icon">
+        <iconset resource="RocketPlugin.qrc">
+         <normaloff>:/images/icon-settings.png</normaloff>:/images/icon-settings.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="RocketPlugin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

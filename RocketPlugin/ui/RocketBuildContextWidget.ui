@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RocketBuildContextWidget</class>
+ <widget class="QWidget" name="RocketBuildContextWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1047</width>
+    <height>58</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>36</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>72</height>
+   </size>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#RocketBuildContextWidget {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(245, 246, 247, 255));
+}
+
+QFrame#frame {
+	border: 0px;
+	border-bottom: 1px solid gray;
+	background-color: rgba(198, 198, 198, 150);
+}
+
+QLineEdit#entityNameLineEdit {
+	min-height: 20px;
+	max-height: 20px;
+	font-family: &quot;Arial&quot;;
+	font-size: 12px;
+}
+
+QLabel, QCheckBox, QRadioButton {
+	font-family: &quot;Arial&quot;;
+	font-size: 13px;
+	color: rgb(100,100,100);
+	font-weight: bold;
+}
+
+QLabel#entityLabel, #undoRedoLabel, #gizmoSettingsLabel, #groupLabel {
+	font-size: 17px;
+	font-weight: bold;
+	color: rgb(100, 100, 100);
+}
+
+QCheckBox:hover {
+	color: rgb(50,50,50);
+}
+
+QCheckBox::indicator:unchecked {
+	image: url(:/images/icon-unchecked.png);
+ }
+
+QCheckBox::indicator:checked {
+	image: url(:/images/icon-checked.png);
+ }
+
+QLabel, QCheckBox, QPushButton {
+	font-family: &quot;Arial&quot;;
+	font-weight: bold;
+}
+
+QPushButton {
+	min-height: 25px;
+	min-width: 150px;
+	font-size: 12px;
+	border: 1px solid grey;
+	color: rgb(100,100,100);
+	border-radius: 3px;
+	/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(245, 246, 247, 255));*/
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(245, 246, 247, 255));
+}
+
+QPushButton:disabled {
+	background-color: rgb(220, 220, 220);
+    color: rgb(150, 150, 150);
+}
+
+QPushButton:disabled:unchecked {
+	background-color: rgb(220, 220, 220);
+    color: rgb(150, 150, 150);
+}
+
+QPushButton:disabled:checked {
+	background-color: rgb(200, 200, 200);
+	color: rgb(125, 125, 125);
+}
+
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(222, 224, 223, 255), stop:1 rgba(245, 246, 247, 255));
+}
+
+QPushButton:pressed {
+	border: 1px solid rgb(50,50,50);
+}
+
+QPushButton:checked {
+	color: white;
+	background-color: rgb(243,154,41);
+ }
+
+QComboBox {
+	border: 0px;
+	border-bottom: 1px solid grey;
+	font-family: &quot;Arial&quot;;
+	font-size: 12px;
+	color: rgb(65, 65, 65);
+	font-weight: bold;
+	padding-left: 0px;
+    min-width: 90px;
+	min-height: 20px;
+	max-height: 20px;
+	background-color: transparent;
+}
+
+QComboBox:hover {
+	border-bottom: 1px solid black;
+}
+
+QComboBox:disabled, :disabled:hover {
+	background-color: rgba(100,100,100,100);
+}
+
+QComboBox:down-arrow {
+	image: url(':/images/icon-combobox-down-arrow.png');
+	width:12px;
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: center right;
+	padding-right: 2px;
+	width: 16px;
+	max-height: 11px;
+	border: 0px;
+}
+
+QComboBox QAbstractItemView {
+	border: 1px solid grey;	
+	background-color: rgb(255, 255, 255);
+	selection-background-color: rgba(230,230,230,120);
+	selection-color: black;
+	padding: 0px;
+}
+
+QFrame#frameCave QSpinBox {
+	width: 100px;
+}
+
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+      <property name="leftMargin">
+       <number>9</number>
+      </property>
+      <property name="topMargin">
+       <number>4</number>
+      </property>
+      <property name="rightMargin">
+       <number>9</number>
+      </property>
+      <property name="bottomMargin">
+       <number>3</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="topLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="entityLabel">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Entity</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="entityNameLineEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="groupLabel">
+            <property name="minimumSize">
+             <size>
+              <width>55</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>55</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Group</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="groupComboBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="selectGroupsButton">
+          <property name="text">
+           <string>Select Groups</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>1</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QWidget" name="gizmoContainer" native="true">
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="deleteButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>52</width>
+               <height>27</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>52</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Delete Entity</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	min-width: 50px;
+	max-width: 50px;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="RocketPlugin.qrc">
+               <normaloff>:/images/icon-recycle.png</normaloff>:/images/icon-recycle.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>18</width>
+               <height>18</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="undoLayout"/>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>1</width>
+               <height>1</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="gizmoSettingsLayout"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="bottomLayout"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="RocketPlugin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

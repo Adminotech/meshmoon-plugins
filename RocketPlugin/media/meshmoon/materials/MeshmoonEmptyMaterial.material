@@ -1,0 +1,22 @@
+material MeshmoonEmptyMaterial
+{
+    technique
+    {
+        pass
+        {
+            vertex_program_ref meshmoon/DiffuseVP
+            {
+            }
+
+            fragment_program_ref meshmoon/DiffuseFP
+            {
+            }
+
+            texture_unit diffuseMap
+            {
+                texture_alias diffuseMap
+                texture MeshmoonEmptyTexture.dds
+            }
+        }
+    }
+}

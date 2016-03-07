@@ -1,0 +1,92 @@
+#include "MeshmoonShaderUniforms.cg"
+
+#ifdef WEIGHTED_DIFFUSE
+half4 SampleWeightMap(half2 texCoord)
+{
+    return tex2D(weightMap, texCoord);
+}
+
+half4 SampleDiffuseMap1(half2 texCoord)
+{
+    return tex2D(diffuseMap1, texCoord);
+}
+half4 SampleDiffuseMap2(half2 texCoord)
+{
+    return tex2D(diffuseMap2, texCoord);
+}
+half4 SampleDiffuseMap3(half2 texCoord)
+{
+    return tex2D(diffuseMap3, texCoord);
+}
+half4 SampleDiffuseMap4(half2 texCoord)
+{
+    return tex2D(diffuseMap4, texCoord);
+}
+#endif
+
+#ifdef DIFFUSE_MAPPING
+half4 SampleDiffuseMap(half2 texCoord)
+{
+    return tex2D(diffuseMap, texCoord);
+}
+#ifdef MULTI_DIFFUSE
+half4 SampleDiffuseMap2(half2 texCoord)
+{
+    return tex2D(diffuseMap2, texCoord);
+}
+#endif
+#endif
+
+#ifdef NORMAL_MAPPING
+half3 SampleNormalMap(half2 texCoord)
+{
+    float3 normal = tex2D(normalMap, texCoord).xyz;
+    normal = 2 * normal - 1;
+    return normalize(normal);
+}
+#endif
+
+half3x3 TangentToWorldSpace(half3 normal, half3 tangent)
+{
+    half3 biTangent = normalize(cross(tangent, normal));
+    return transpose(half3x3(tangent, biTangent, normal));
+}
+
+#ifdef SPECULAR_MAPPING
+half SampleSpecularMap(half2 texCoord)
+{
+    return tex2D(specularMap, texCoord).r;
+}
+#endif
+
+#ifdef LIGHT_MAPPING
+float4 SampleLightMap(half2 texCoord)
+{
+    return tex2D(lightMap, texCoord);
+}
+#endif
+
+half ComputeLightAttenuation(half lightDistance, half4 lightAttenuation)
+{
+    // Range                                = lightAttenuation.x
+    // Constant attenuation/intensity       = lightAttenuation.y
+    // Linear attenuation                   = lightAttenuation.z
+    // Quadratic attenuation                = lightAttenuation.w
+
+    // Unity's light attenuation model with a little tweak to ensure that it falls to zero.
+    float normalizedDistance = max(0.0f, lightDistance / lightAttenuation.x);
+
+    return max(0.0f, 1 / (0.65 + 8.5 * normalizedDistance + 3.5 * (normalizedDistance * normalizedDistance)) - 0.08) * lightAttenuation.y;
+}
+
+half ComputeLightBlinnPhongSpecularFactor(half3 normal, half3 lightDir, half3 viewDir)
+{
+    // Half vector
+    half3 H = normalize(lightDir + viewDir);
+ 
+    //Intensity of the specular light
+    half NdotH = saturate(dot(normal, H));
+ 
+    //Sum up the specular light factoring
+    return pow(saturate(NdotH), specularHardness) * (NdotH <= 0.f ? 0.f : 1.f);
+}

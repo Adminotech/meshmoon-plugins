@@ -1,0 +1,17 @@
+// y-axis genrated by blender2ogre 0.6.0
+
+material meshmoon-y-axis 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass y-axis
+        {
+            ambient 0.0024776458740234375 0.0 1.0 1.0
+            diffuse 0.0019821167287545904 0.0 0.800000011920929 1.0
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+        }
+    }
+}

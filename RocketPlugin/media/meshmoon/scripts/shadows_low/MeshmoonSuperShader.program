@@ -1,0 +1,2267 @@
+vertex_program meshmoon/DiffVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING 
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffVColVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DVERTEX_COLOR
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffVColFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DVERTEX_COLOR
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffaVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DDIFFUSE_ALPHA
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffaFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DDIFFUSE_ALPHA
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffaVColVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DDIFFUSE_ALPHA -DVERTEX_COLOR
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffaVColFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DDIFFUSE_ALPHA -DVERTEX_COLOR
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffAlphamaskVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DALPHA_MASKING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffAlphamaskFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DALPHA_MASKING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffAnimVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DANIM_TEXTURES
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffAnimFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DANIM_TEXTURES
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffShadowVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSHADOW_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffShadowFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSHADOW_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/MultiDiffShadowVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DMULTI_TEXTURE -DSHADOW_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/MultiDiffShadowFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DMULTI_TEXTURE -DSHADOW_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffShadowVColVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSHADOW_MAPPING -DVERTEX_COLOR
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffShadowVColFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSHADOW_MAPPING -DVERTEX_COLOR
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+
+vertex_program meshmoon/DiffSpecflatNormalShadowLumVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_LIGHTING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecflatNormalShadowLumFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_LIGHTING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecflatNormalVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_LIGHTING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+	}
+}
+
+fragment_program meshmoon/DiffSpecflatNormalFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_LIGHTING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+    }
+}
+
+vertex_program meshmoon/DiffSpecflatShadowVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_LIGHTING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecflatShadowFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_LIGHTING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapNormalShadowLumVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapNormalShadowLumFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapNormalShadowVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapNormalShadowFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapNormalVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapNormalFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour	
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapNormalShadowLumOpaVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_MAPPING -DOPACITY_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapNormalShadowLumOpaFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_MAPPING -DOPACITY_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapNormalOpaVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_MAPPING -DOPACITY_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapNormalOpaFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_MAPPING -DOPACITY_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour	
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapShadowLumOpaVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_MAPPING -DOPACITY_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapShadowLumOpaFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_MAPPING -DOPACITY_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapShadowLumVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapShadowLumFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DLUMINANCE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapShadowOpaVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DOPACITY_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapShadowOpaFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DOPACITY_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapShadowVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapShadowFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapReflVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DREFLECTION_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapReflFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DREFLECTION_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapShadowReflVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DREFLECTION_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapShadowReflFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DREFLECTION_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffReflAlphaVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DREFLECTION_MAPPING -DSOLID_ALPHA
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffReflAlphaFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DREFLECTION_MAPPING -DSOLID_ALPHA
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffShadowLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSHADOW_MAPPING -DLIGHT_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffShadowLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSHADOW_MAPPING -DLIGHT_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+
+vertex_program meshmoon/DiffAlphamaskShadowLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DALPHA_MASKING -DSHADOW_MAPPING -DLIGHT_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffAlphamaskShadowLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DALPHA_MASKING -DSHADOW_MAPPING -DLIGHT_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+vertex_program meshmoon/DiffNormalShadowLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSHADOW_MAPPING -DLIGHT_MAPPING -DNORMAL_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffNormalShadowLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSHADOW_MAPPING -DLIGHT_MAPPING -DNORMAL_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+		
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+vertex_program meshmoon/DiffAlphamaskNormalShadowLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DALPHA_MASKING -DSHADOW_MAPPING -DLIGHT_MAPPING -DNORMAL_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffAlphamaskNormalShadowLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DALPHA_MASKING -DSHADOW_MAPPING -DLIGHT_MAPPING -DNORMAL_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+		
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+vertex_program meshmoon/DiffNormalShadowVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffNormalShadowFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+				
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/DiffNormalVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffNormalFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/DiffNormalLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DLIGHT_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffNormalLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DLIGHT_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+		
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+
+	}
+}
+
+vertex_program meshmoon/DiffAlphamaskNormalLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DLIGHT_MAPPING -DALPHA_MASKING -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffAlphamaskNormalLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DLIGHT_MAPPING -DALPHA_MASKING -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+		
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+
+	}
+}
+
+vertex_program meshmoon/DiffLightmapUnlitVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DLIGHT_MAPPING -DDIFFUSE_MAPPING -DUNLIT
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour	
+	}
+}
+
+fragment_program meshmoon/DiffLightmapUnlitFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DLIGHT_MAPPING -DDIFFUSE_MAPPING -DUNLIT
+
+	default_params
+    {
+
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+	}
+}
+
+vertex_program meshmoon/DiffAlphamaskLightmapUnlitVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DLIGHT_MAPPING -DALPHA_MASKING -DDIFFUSE_MAPPING -DUNLIT
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour	
+	}
+}
+
+fragment_program meshmoon/DiffAlphamaskLightmapUnlitFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DLIGHT_MAPPING -DALPHA_MASKING -DDIFFUSE_MAPPING -DUNLIT
+
+	default_params
+    {
+
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+	}
+}
+
+vertex_program meshmoon/DiffSpecmapNormalLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DNORMAL_MAPPING -DLIGHT_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapNormalLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DNORMAL_MAPPING -DLIGHT_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+        
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+vertex_program meshmoon/DiffSpecmapNormalShadowLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DNORMAL_MAPPING -DLIGHT_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+	    param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+        
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/DiffSpecmapNormalShadowLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DSHADOW_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DNORMAL_MAPPING -DLIGHT_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+        
+        // Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+        
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING 
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffNormalVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+		param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffNormalFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffNormalLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLIGHT_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+        param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffNormalLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLIGHT_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+		
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffNormalShadowVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSHADOW_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+		param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+		
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffNormalShadowFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSHADOW_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+		
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffSpecmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING  -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+        
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffSpecmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffSpecmapLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DLIGHT_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffSpecmapLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DSPECULAR_MAPPING -DLIGHT_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+		
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffSpecmapNormalVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+		param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffSpecmapNormalFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffSpecmapNormalShadowVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSHADOW_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+		param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+		
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffSpecmapNormalShadowFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSHADOW_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+
+		param_named_auto ambientLight ambient_light_colour
+		
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffSpecmapNormalLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLIGHT_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+		param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffSpecmapNormalLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DLIGHT_MAPPING -DSPECULAR_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+		
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}
+
+vertex_program meshmoon/ParallaxmapDiffSpecmapNormalShadowLightmapVP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainVS
+   	profiles vs_3_0 arbvp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSHADOW_MAPPING -DSPECULAR_MAPPING -DLIGHT_MAPPING
+
+	default_params
+	{
+	    param_named_auto worldViewProjMatrix worldviewproj_matrix
+	    param_named_auto worldMatrix world_matrix
+		param_named_auto inverseWorldMatrix inverse_world_matrix
+
+		param_named_auto camPos camera_position
+		
+		param_named_auto sunLightDir light_position 0
+
+		param_named_auto lightPos0 light_position 1
+		param_named_auto lightPos1 light_position 2
+		
+		param_named_auto lightAtt0 light_attenuation 1
+		param_named_auto lightAtt1 light_attenuation 2
+
+		param_named_auto fogParams fog_params
+		param_named_auto fogColor fog_colour
+		
+		// Shadow mapping parameters.
+		shared_params_ref params_shadowTextureMatrix
+	}
+}
+
+fragment_program meshmoon/ParallaxmapDiffSpecmapNormalShadowLightmapFP cg
+{
+	source MeshmoonSuperShader.cg
+    entry_point mainPS
+    profiles ps_3_0 arbfp1
+   	compile_arguments -DPARALLAX_MAPPING -DDIFFUSE_MAPPING -DNORMAL_MAPPING -DSHADOW_MAPPING -DSPECULAR_MAPPING -DLIGHT_MAPPING
+
+	default_params
+    {
+		param_named_auto sunLightCol light_diffuse_colour 0
+
+		param_named_auto lightCol0 light_diffuse_colour 1
+		param_named_auto lightCol1 light_diffuse_colour 2
+		
+		// Shadow mapping parameters: (shadow fuzzy width, fixed depth bias, gradient clamp, gradient scale bias)
+		shared_params_ref params_shadowMatrixScaleBias
+        shared_params_ref params_shadowParams
+		param_named jitterSize float 1
+		
+		// Light mapping parameters.
+		param_named lightMapFactor float 1
+    }
+}

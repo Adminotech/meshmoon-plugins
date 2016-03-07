@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RocketStorageWidget</class>
+ <widget class="QWidget" name="RocketStorageWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>586</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#RocketStorageWidget {	
+	background-color: transparent;
+}
+
+QFrame#frameStorage {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(245, 246, 247, 255));
+	border: 0px;
+	border-left: 1px solid grey;
+	border-radius: 0px;
+}
+
+QFrame#frameTop {
+	border: 0px;
+	background-color: rgba(198, 198, 198, 150);
+	border-bottom: 1px solid grey;
+}
+
+QLabel#labelPath {
+	font-family: &quot;Arial&quot;;
+	font-size: 19px;
+	font-weight: bold;
+	color:rgb(8,149,195);
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+QLabel#labelProgressTitle {
+	font-family: &quot;Arial&quot;;
+	font-weight: bold;
+	font-size: 17px;
+	color: rgb(120, 120, 120);
+}
+
+QPushButton#buttonLogout, #buttonClose, #buttonRefresh { border: 0px; }
+QPushButton#buttonLogout::pressed, #buttonClose::pressed, #buttonRefresh::pressed { border: 0px; }
+QPushButton#buttonLogout::hover, #buttonClose::hover, #buttonRefresh::hover { border: 0px; }
+
+QProgressBar {
+	background-color: rgba(255,255,255,200);
+	color: rgb(244, 244, 244);
+	border: 1px solid rgb(80,80,80);
+	border-radius: 4px;
+}
+
+QProgressBar::chunk {
+    background-image: url(':/images/stripe-lightgrey.png');
+    width: 12px;
+	border: 0px;
+ }
+
+QListView {
+	font-family: &quot;Arial&quot;;
+	font-size: 17px;
+	show-decoration-selected: 1;
+	border: 0px;
+	border-bottom: 1px solid grey;
+	border-top: 1px solid grey;
+	background-color: rgba(255,255,255,200);
+	background-image: url(&quot;:/images/logo-meshmoon-light.png&quot;);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-origin: content;
+	outline: none;
+ }
+
+QListView::item {
+	color: rgb(80,80,80);
+	min-height: 30px;
+	border: 0px;
+}
+
+QListView::item:selected, ::item:selected:hover {
+	background-color: rgb(9,149,195);
+	color: white;
+}
+
+QListView::item:hover {
+	background-color: rgba(230,230,230, 100);
+}
+
+QCheckBox#pinStorage::indicator {
+	width: 16px;
+	height: 16px;
+	subcontrol-position: left center;
+}
+QCheckBox#pinStorage::indicator:unchecked {
+	image: url(:/images/icon-pin-open-48x48.png);
+}
+
+QCheckBox#pinStorage::indicator:checked {
+	image: url(:/images/icon-pin-closed-48x48.png);
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frameStorage">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>6</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutStorage">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="frameTop">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+          <layout class="QHBoxLayout" name="layoutTop">
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="pinStorage">
+             <property name="maximumSize">
+              <size>
+               <width>17</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelPath">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>Current storage path</string>
+             </property>
+             <property name="text">
+              <string>Meshmoon Storage</string>
+             </property>
+             <property name="indent">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonMenu">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>24</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>24</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Storage menu</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="RocketPlugin.qrc">
+               <normaloff>:/images/icon-menu-34x34.png</normaloff>:/images/icon-menu-34x34.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>18</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="layoutProgress">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>6</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QProgressBar" name="progress">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="textVisible">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelProgressTitle">
+            <property name="minimumSize">
+             <size>
+              <width>109</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="indent">
+             <number>4</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>1</width>
+              <height>23</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="RocketPlugin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

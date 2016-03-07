@@ -1,0 +1,44 @@
+
+vertex_program meshmoon/OculusRiftUiVP cg
+{
+    source OculusRiftUi.cg
+    entry_point mainVS
+    profiles vs_2_0 arbvp1
+
+    default_params
+    {
+        param_named_auto worldViewProjMatrix worldviewproj_matrix
+    }
+}
+
+fragment_program meshmoon/OculusRiftUiPS cg
+{
+    source OculusRiftUi.cg
+    entry_point mainPS
+    profiles ps_2_0 arbfp1
+}
+
+material meshmoon/OculusRiftUi
+{
+    technique
+    {
+        pass
+        {
+			cull_software none
+			cull_hardware none
+			depth_check off
+			depth_write off
+			depth_func always_pass
+			scene_blend alpha_blend
+		
+            vertex_program_ref meshmoon/OculusRiftUiVP
+            {
+                param_named_auto worldViewProjMatrix worldviewproj_matrix
+            }
+
+            fragment_program_ref meshmoon/OculusRiftUiPS
+            {
+            }
+        }
+    }
+}

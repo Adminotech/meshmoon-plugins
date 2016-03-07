@@ -1,0 +1,53 @@
+[
+    // Tundra core plugins
+    { "--plugin" : [ "OgreRenderingModule",
+                     "SceneInteract",
+                     "EnvironmentModule",
+                     "PhysicsModule",
+                     "TundraProtocolModule",
+                     "ECEditorModule",
+                     "JavascriptModule",
+                     "AssetModule",
+                     "ArchivePlugin",
+                     "AvatarModule",
+                     "SkyXHydrax",
+                     "OgreAssetEditorModule",
+                     "DebugStatsModule",
+                     "SceneWidgetComponents",
+                     "MumblePlugin",
+                     "CanvasPlugin" ]
+    },
+
+    // Tundra addon plugins
+    { "--plugin" : { "name"    : "VlcPlugin",
+                     "exclude" : { "platform" : "win", "arch" : "x64" } }
+    },
+
+    // Meshmoon plugins
+    { "--plugin" : [ "AssetInterestPlugin",
+                     "MeshmoonHttpPlugin",
+                     "MeshmoonCommon",
+                     "MeshmoonAssimpPlugin",
+                     "MeshmoonComponents",
+                     "MeshmoonEnvironmentPlugin",
+                     "RocketPlugin" ]
+    },
+
+    // Additional config files
+    { "--config" : "ludocraft-project-room.json" },
+
+    // JavaScript plugins
+    { "--jsplugin" : [ "cameraapplication.js",
+                       "MenuBar.js",
+                       "RendererSettings.js",
+                       "SoundSettings.js" ]
+    },
+
+    // Rocket options
+    // { "--fpsLimit" : 60 },
+    [ "--trustServerStorages",
+      "--acceptUnknownHttpSources",
+      "--acceptUnknownLocalSources",
+      "--hideBenignOgreMessages"],
+    { "--splash" : "data/ui/images/adminotech_tundra_splash.png" }
+]

@@ -1,0 +1,14 @@
+material Meshmoon_EC_MediaBrowser
+{
+    technique
+    {
+        pass
+        {
+        	emissive 1.0 1.0 1.0 1.0
+            texture_unit
+            {
+                texture EC_MediaBrowser.dds
+            }
+        }
+    }
+}

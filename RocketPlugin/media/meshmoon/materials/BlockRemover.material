@@ -1,0 +1,20 @@
+material BlockRemover
+{
+   technique
+   {
+      pass
+      {
+         scene_blend alpha_blend
+         lighting off
+
+         depth_write off
+         depth_check off
+
+         texture_unit
+         {
+            colour_op_ex source1 src_manual src_current 1 0 0
+            alpha_op_ex source1 src_manual src_current 0.4
+         }
+      }
+   }
+}

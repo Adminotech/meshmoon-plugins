@@ -1,0 +1,192 @@
+#include "MeshmoonShaderUniforms.cg"
+#include "MeshmoonShaderHelpers.cg"
+
+#ifdef SHADOW_MAPPING
+#include "CsmShadowSampleUtils.cg"
+#define JITTER_SHADOWS
+#include "DepthShadowMapReceiverJitter.cg"
+#ifdef CSM_SHADOWS
+#include "CsmShadows.cg"
+#else
+uniform float4 fixedDepthBias;
+uniform float4 gradientScaleBias;
+uniform float4 shadowMapSize;
+uniform float4 invShadowMapSize;
+#endif
+#endif
+
+struct VertexInput
+{
+    float4 position     : POSITION0;
+    half3 normal       : NORMAL;
+
+#ifdef NORMAL_MAPPING
+    half3 tangent      : TANGENT;
+#endif
+
+#if defined(WEIGHTED_DIFFUSE) || defined(DIFFUSE_MAPPING) || defined(NORMAL_MAPPING)
+    half2 texCoord0    : TEXCOORD0;
+#endif
+#ifdef LIGHT_MAPPING
+    half2 texCoord1    : TEXCOORD1;
+#endif
+};
+
+struct VertexOutput
+{
+    float4 position     : POSITION;
+    half3 normal;
+
+#ifdef NORMAL_MAPPING
+    half3 tangent;
+#endif
+
+    half3 worldPosition;
+
+#ifdef SHADOW_MAPPING
+    half4 shadowLightspacePos;
+#endif
+
+#if defined(WEIGHTED_DIFFUSE) || defined(DIFFUSE_MAPPING) || defined(NORMAL_MAPPING)
+    half3 texCoord0    : TEXCOORD0;
+#endif
+#ifdef LIGHT_MAPPING
+    half2 texCoord1    : TEXCOORD1;
+#endif
+};
+
+VertexOutput mainVS(VertexInput IN)
+{
+    VertexOutput output;
+
+    output.position = mul(worldViewProjMatrix, IN.position);
+    output.normal = normalize(mul(worldMatrix, half4(IN.normal, 0)).xyz);
+
+    half4 worldPosition = mul(worldMatrix, IN.position);
+    output.worldPosition = worldPosition.xyz;
+
+#ifdef NORMAL_MAPPING
+    output.tangent = normalize(mul(worldMatrix, half4(IN.tangent, 0)).xyz);
+#endif
+
+#ifdef SHADOW_MAPPING
+    output.shadowLightspacePos = mul(texMatrix0, worldPosition);
+    output.shadowLightspacePos.z = output.shadowLightspacePos.z / output.shadowLightspacePos.w;
+    output.texCoord0.z = output.position.z;
+#endif
+
+#if defined(WEIGHTED_DIFFUSE) || defined(DIFFUSE_MAPPING) || defined(NORMAL_MAPPING)
+    output.texCoord0.xy = IN.texCoord0;
+#endif
+#ifdef LIGHT_MAPPING
+    output.texCoord1 = IN.texCoord1;
+#endif
+    return output;
+}
+
+float4 mainPS(VertexOutput IN) : COLOR0
+{
+#ifdef WEIGHTED_DIFFUSE
+    half4 weights = SampleWeightMap(IN.texCoord0 * weightMapTiling);
+    half4 diffuseColor;
+    diffuseColor += weights.x * SampleDiffuseMap1(IN.texCoord0.xy * diffuseMapTilings[0].xy);
+    diffuseColor += weights.y * SampleDiffuseMap2(IN.texCoord0.xy * diffuseMapTilings[0].zw);
+    diffuseColor += weights.z * SampleDiffuseMap3(IN.texCoord0.xy * diffuseMapTilings[1].xy);
+    diffuseColor += weights.w * SampleDiffuseMap4(IN.texCoord0.xy * diffuseMapTilings[1].zw);
+#endif
+
+#ifdef DIFFUSE_MAPPING
+    half4 diffuseColor = SampleDiffuseMap(IN.texCoord0.xy * diffuseMapTiling);
+#ifdef MULTI_DIFFUSE
+    diffuseColor *= SampleDiffuseMap2(IN.texCoord0.xy * diffuseMap2Tiling);
+#endif
+#else
+#ifndef WEIGHTED_DIFFUSE
+    half4 diffuseColor = half4(1, 1, 1, 1);
+#endif
+#endif
+
+#ifdef NORMAL_MAPPING
+    half3x3 tangentToWorld = TangentToWorldSpace(IN.normal, IN.tangent);
+    half3 normal = normalize(mul(tangentToWorld, SampleNormalMap(IN.texCoord0.xy * normalMapTiling)));
+#else
+    half3 normal = IN.normal;
+#endif
+
+#ifdef SPECULAR_LIGHTING
+#ifdef SPECULAR_MAPPING
+    half shininess = SampleSpecularMap(IN.texCoord0.xy * specularMapTiling);
+#else
+    half shininess = 1.0f;
+#endif
+#endif
+
+#ifdef LIGHT_MAPPING
+    half4 diffuseLight = SampleLightMap(IN.texCoord1 * lightMapTiling) * lightMapPower;
+#else
+    half4 diffuseLight = ambientLight;
+#endif
+    half4 specularLight = half4(0, 0, 0, 0);
+    
+#ifdef DEBUG_CSM
+    half4 lightness = half4(1.0f, 1.0f, 1.0f, 1.0f);
+#else
+    half lightness = 1.0f;
+#endif
+
+#ifdef SHADOW_MAPPING
+    // Sample from jitter map
+    half4 jitter = tex2D(jitterMapUnit, half2(0, 0));
+
+    half NDotL = dot(IN.normal, -lightDirections[0].xyz);
+
+#ifdef CSM_SHADOWS
+    lightness = getCsmShadowFactor(shadowMap0, shadowMap1, shadowMap2, shadowMap3,
+                                    IN.shadowLightspacePos, NDotL);
+#else
+    lightness = getShadowFactor(shadowMap0, IN.shadowLightspacePos, shadowMapSize.x, invShadowMapSize.x,
+                                    fixedDepthBias.x, gradientScaleBias.x, NDotL);
+#endif
+
+    // Fade out shadows near max distance
+    half weight = saturate(((IN.texCoord0.z + shadowFadeDist) - shadowMaxDist) / shadowFadeDist);
+    lightness = lerp(lightness, 1, weight) + jitter.x * 0.001;
+
+    lightness = clamp(lightness, 0.4f, 1.0f);
+#endif
+
+#ifdef DIFFUSE_LIGHTING
+#ifdef SPECULAR_LIGHTING
+    half3 viewDirection = normalize(cameraPosition.xyz - IN.worldPosition.xyz);
+#endif
+
+    for(int i = 0; i < MAX_LIGHT_COUNT; ++i)
+    {
+        half3 lightDir = lerp(lightDirections[i].xyz, lightDirections[i].xyz - IN.worldPosition.xyz, lightDirections[i].w);
+        half  lightDistance = length(lightDir);
+        lightDir = normalize(lightDir);
+
+        half attenuation = lerp(1.0f, ComputeLightAttenuation(lightDistance, lightAttenuations[i]) * 2, lightDirections[i].w);
+
+        half spotLightFactor = 1.0f;
+#ifdef SPOTLIGHTS_ENABLED
+        // factor in spotlight angle
+        half3 spotDirection = normalize(mul(worldMatrix, spotLightDirections[i]).xyz);
+        half rho = saturate(dot(-spotDirection, lightDir));
+        // factor = (rho - cos(outer/2) / cos(inner/2) - cos(outer/2)) ^ falloff
+        spotLightFactor = pow(saturate(rho - spotLightParams[i].y) / (spotLightParams[i].x - spotLightParams[i].y), spotLightParams[i].z);
+#endif
+
+        half NDotL = saturate(dot(normal, lightDir));
+        half lightPower = saturate(NDotL) * attenuation;
+        diffuseLight += lightness * lightDiffuseColors[i] * lightPower * spotLightFactor;
+
+#ifdef SPECULAR_LIGHTING
+        half specularIntensity = ComputeLightBlinnPhongSpecularFactor(normal, lightDir, viewDirection) * (lightAttenuations[i].y);
+        specularLight += lightness * lightSpecularColors[i] * specularIntensity * shininess * specularPower * saturate((1.0f - (lightDistance / lightAttenuations[i].x)) * 3)  * spotLightFactor;
+#endif
+    }
+#endif
+
+    return diffuseColor * (diffuseLight + specularLight);
+}

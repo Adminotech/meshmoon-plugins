@@ -1,0 +1,31 @@
+
+uniform float4x4 worldViewProjMatrix;
+uniform sampler2D texture;
+uniform float2 MousePosition;
+
+void mainVS(
+    in float4 pos : POSITION,
+    in float2 tex : TEXCOORD0,
+
+    out float4 oPos : POSITION,
+    out float2 oTex
+    )
+{
+    oPos = mul(worldViewProjMatrix, pos);
+    oTex = tex;
+}
+
+void mainPS(
+    in float2 tex,
+    out float4 oCol: COLOR
+    )
+{
+    oCol = tex2D(texture, tex);
+
+    if (MousePosition.x > 0 && MousePosition.y > 0)
+    {
+        float dist = length(tex - MousePosition);
+        if (dist < 0.005)
+            oCol = float4(0.85, 0, 0, 1);
+    }
+}

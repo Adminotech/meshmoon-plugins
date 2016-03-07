@@ -1,0 +1,76 @@
+uniform float4x4 worldViewProjMatrix;
+uniform float4x4 worldMatrix;
+
+uniform half4 ambientLight;
+
+// Weighted diffuse mapping
+#ifdef WEIGHTED_DIFFUSE
+uniform half2 weightMapTiling;
+uniform half4 diffuseMapTilings[2];
+
+uniform sampler2D weightMap;
+uniform sampler2D diffuseMap1;
+uniform sampler2D diffuseMap2;
+uniform sampler2D diffuseMap3;
+uniform sampler2D diffuseMap4;
+#endif
+
+// Diffuse mapping
+#ifdef DIFFUSE_MAPPING
+uniform half2 diffuseMapTiling;
+uniform sampler2D diffuseMap;
+#endif
+#ifdef MULTI_DIFFUSE
+uniform half2 diffuseMap2Tiling;
+uniform sampler2D diffuseMap2;
+#endif
+#ifdef NORMAL_MAPPING
+uniform half2 normalMapTiling;
+uniform sampler2D normalMap;
+#endif
+#ifdef SPECULAR_MAPPING
+uniform half2 specularMapTiling;
+uniform sampler2D specularMap;
+#endif
+#ifdef LIGHT_MAPPING
+uniform half2 lightMapTiling;
+uniform half lightMapPower;
+uniform sampler2D lightMap;
+#endif
+
+//#define DEBUG_CSM
+#ifdef SHADOW_MAPPING
+uniform half shadowFadeDist;
+uniform half shadowMaxDist;
+
+uniform float4x4 texMatrix0;
+uniform sampler2D jitterMapUnit;
+uniform sampler2D shadowMap0;
+#ifdef CSM_SHADOWS
+uniform sampler2D shadowMap1;
+uniform sampler2D shadowMap2;
+uniform sampler2D shadowMap3;
+#endif
+#endif
+
+#ifdef DIFFUSE_LIGHTING
+// Light parameters
+uniform int lightCount;
+uniform half4 lightDirections[MAX_LIGHT_COUNT];
+uniform half4 lightDiffuseColors[MAX_LIGHT_COUNT];
+uniform half4 lightSpecularColors[MAX_LIGHT_COUNT];
+uniform half4 lightAttenuations[MAX_LIGHT_COUNT];
+#endif
+
+#ifdef SPOTLIGHTS_ENABLED
+// Spot lights
+uniform half4 spotLightDirections[MAX_LIGHT_COUNT];
+uniform half4 spotLightParams[MAX_LIGHT_COUNT];
+#endif
+
+#ifdef SPECULAR_LIGHTING
+// Specular parameters
+uniform half4 cameraPosition;
+uniform half specularPower;
+uniform half specularHardness;
+#endif

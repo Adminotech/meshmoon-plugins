@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RocketResourceEditorWidget</class>
+ <widget class="QWidget" name="RocketResourceEditorWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>391</width>
+    <height>70</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Resource Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="RocketPlugin.qrc">
+    <normaloff>:/images/icon-archive.png</normaloff>:/images/icon-archive.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QLabel#labelMessage, #labelTimestamp, #labelFileType, #labelStatus {
+	background-color: transparent;
+	border: 0px;
+	color: rgb(205, 205, 205);
+	font: 11px &quot;Arial&quot;;
+	font-weight: bold;
+}
+
+QLabel#labelTimestamp {
+	padding-left: 20px;
+	color: rgb(174, 180, 197);
+}
+
+QLabel#labelFileType {
+	padding-left: 8px;
+}
+
+QLabel#labelMessage {
+	color: white;
+}
+
+QPushButton#buttonSave, #buttonClose {
+	background-color: transparent;
+	color: rgb(80, 80, 80);
+	border: 1px solid grey;
+	border: 0px;
+	border-radius: 3px;
+	font-family: &quot;Arial&quot;;
+	font-size: 13px;
+	font-weight: bold;
+	min-height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+QPushButton#buttonSave::hover, #buttonClose::hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(225, 226, 227, 255));
+	color: rgb(60, 60, 60);
+	border: 1px solid grey;
+}
+
+QPushButton#buttonSave::pressed, #buttonClose::pressed {
+	background-color: rgba(200, 200, 200);
+	border: 1px solid grey;
+}
+
+QFrame#bottomFrame {
+	background-color: rgb(61, 63, 68);
+	border: 0px;
+	border-top: 1px solid rgb(182,188,204);
+}
+
+QFrame#inputFrame {
+	background-color: rgb(61, 63, 68);
+	border: 1px solid rgb(182,188,204);
+	border-top: 0px;
+	border-right: 0px;
+	border-radius: 0px;
+	border-bottom-left-radius: 3px;
+}
+
+QLineEdit#inputLine {
+	border: 1px solid rgb(182,188,204);
+	border-radius: 3px;
+	font: 13px &quot;Courier New&quot;;
+	padding-left: 3px;
+	color: black;
+}
+
+QLabel#labelInputInfo {
+	background-color: transparent;
+	border: 0px;
+	color: rgb(255, 255, 255);
+	font: 13px &quot;Arial&quot;;
+	font-weight: bold;
+}
+
+QCheckBox#checkboxInput, QLabel#labelInputStatus {
+	background-color: transparent;
+	border: 0px;
+	color: rgb(205, 205, 205);
+	font: 13px &quot;Arial&quot;;
+	font-weight: bold;
+}
+
+QCheckBox#checkboxInput {
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:disabled {
+	color: rgb(166, 166, 166);
+}
+
+/*
+QCheckBox::indicator:unchecked {
+	image: url(:/images/icon-unchecked-white.png);
+ }
+
+QCheckBox::indicator:checked {
+	image: url(:/images/icon-checked-white.png);
+ }
+*/</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="contentFrame">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QVBoxLayout" name="contentLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="bottomFrame">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>25</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>25</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>6</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="labelMessage">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+        <property name="indent">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelTimestamp">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelFileType">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+        <property name="indent">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="RocketPlugin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

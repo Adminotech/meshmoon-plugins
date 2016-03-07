@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RocketAvatarEditorWidget</class>
+ <widget class="QWidget" name="RocketAvatarEditorWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>332</width>
+    <height>529</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#RocketAvatarEditorWidget {
+	background-color: transparent;
+}
+
+QComboBox {
+	border: 0px;
+	border-bottom: 1px solid grey;
+	font-family: &quot;Arial&quot;;
+	font-size: 12px;
+	color: rgb(65, 65, 65);
+	font-weight: bold;
+	padding-left: 0px;
+}
+
+QComboBox:hover {
+	background-color: rgba(230,230,230,120);
+}
+
+QComboBox:down-arrow {
+	image: url(':/images/icon-combobox-down-arrow.png');
+	width: 12px;
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: center right;
+	padding-right: 2px;
+	width: 16px;
+	max-height: 11px;
+	border: 0px;
+}
+
+QComboBox QAbstractItemView {
+	border: 1px solid grey;	
+	background-color: rgb(255, 255, 255);
+	selection-background-color: rgba(230,230,230,120);
+	selection-color: black;
+	padding: 0px;
+}
+
+QFrame#contentFrame {
+	background-color: rgb(255, 255, 255); 
+	border: 0px;
+	border-bottom: 1px solid rgb(100, 100, 100); 
+	border-right: 1px solid rgb(100, 100, 100); 
+	border-radius: 0px; 
+}
+
+QFrame#controlsFrame {
+	background-color: rgb(255, 255, 255); 
+	border: 0px;
+	border-bottom: 0px solid rgb(100, 100, 100); 
+	border-right: 1px solid rgb(100, 100, 100); 
+	border-radius: 0px; 
+}
+
+QFrame#fillFrame {
+	background-color: rgb(240, 240, 240); 
+	border: 0px;
+	border-right: 1px solid rgb(100, 100, 100); 
+}
+
+QLabel, QCheckBox {
+	font-family: &quot;Arial&quot;;
+	font-size: 12px;
+	color: rgb(65, 65, 65);
+	font-weight: bold;
+}
+
+QLabel#labelUsername {
+	font-size: 24px;
+}
+
+QLabel#labelIcon {
+	border: 1px solid grey;
+	border-radius: 3px; 
+}
+
+QPushButton#buttonCloseWithoutSave, #buttonSaveAndClose {
+	background-color: rgb(255, 255, 255);
+	color: rgb(115, 115, 115);
+	font-size: 13px;
+	font-weight: bold;
+	border: 0px;
+}
+
+QPushButton#buttonSaveAndClose, #buttonCloseWithoutSave {
+	text-align: right;
+	padding-right: 28px;
+	background-image: url(':/images/icon-check.png');
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+
+QPushButton#buttonCloseWithoutSave {
+	background-image: url(':/images/icon-cross.png');
+}
+
+QPushButton#buttonCloseWithoutSave:hover, #buttonSaveAndClose:hover {
+	color: rgb(65, 65, 65);
+}
+
+QPushButton#buttonNextPage { 
+	border: 0px;
+	border-radius: 0px;
+	background-image: url(':/images/icon-next.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+QPushButton#buttonNextPage:hover { background-image: url(':/images/icon-next-hover.png'); }
+
+QPushButton#buttonPreviousPage { 
+	border: 0px;
+	border-radius: 0px;
+	background-image: url(':/images/icon-previous.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+QPushButton#buttonPreviousPage:hover { background-image: url(':/images/icon-previous-hover.png'); }
+
+QCheckBox::indicator:unchecked {
+	image: url(:/images/icon-unchecked.png);
+ }
+
+QCheckBox::indicator:checked {
+	image: url(:/images/icon-checked.png);
+ }
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="controlsFrame">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="leftMargin">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>6</number>
+      </property>
+      <property name="rightMargin">
+       <number>6</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="spacing">
+         <number>20</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="buttonCloseWithoutSave">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>24</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>CLOSE</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonSaveAndClose">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>24</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>SAVE CHANGES</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="contentFrame">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="leftMargin">
+       <number>6</number>
+      </property>
+      <property name="rightMargin">
+       <number>6</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="labelIcon">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignHCenter|Qt::AlignTop</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelUsername">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="rightMargin">
+         <number>5</number>
+        </property>
+        <property name="bottomMargin">
+         <number>5</number>
+        </property>
+        <item row="0" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QSlider" name="sliderRotation">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Rotation</string>
+            </property>
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>360</number>
+            </property>
+            <property name="sliderPosition">
+             <number>180</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::NoTicks</enum>
+            </property>
+            <property name="tickInterval">
+             <number>45</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBoxAutoRotate">
+            <property name="text">
+             <string>Auto rotate</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelRotate">
+          <property name="minimumSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Rotation</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="RocketPlugin.qrc">:/images/icon-rotate.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBoxAnimations">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>21</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Animation</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Stand</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Walk</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Fly</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelAnimation">
+          <property name="minimumSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Animation</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="RocketPlugin.qrc">:/images/icon-heartbeat.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>1</width>
+       <height>10000</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QFrame" name="fillFrame">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>1</width>
+          <height>1000</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="margin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="buttonPreviousPage">
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>1</width>
+            <height>1</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonNextPage">
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="RocketPlugin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

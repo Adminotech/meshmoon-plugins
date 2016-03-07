@@ -1,0 +1,212 @@
+<!DOCTYPE Scene>
+<scene>
+ <entity id="1" sync="true">
+  <component typeId="26" type="Name" sync="true">
+   <attribute value="Environment" type="string" id="name" name="Name"/>
+   <attribute value="" type="string" id="description" name="Description"/>
+   <attribute value="" type="string" id="group" name="Group"/>
+  </component>
+  <component typeId="507" type="MeshmoonSky" sync="true">
+   <attribute value="4" type="uint" id="cloudCoverage" name="Cloud Coverage"/>
+   <attribute value="25" type="uint" id="timeZone" name="Time Zone"/>
+   <attribute value="1" type="uint" id="timeMode" name="Time Mode"/>
+   <attribute value="0.000000" type="real" id="longitude" name="Longitude"/>
+   <attribute value="0.000000" type="real" id="latitude" name="Latitude"/>
+   <attribute value="0.700000" type="real" id="godRayIntensity" name="God Ray Intensity"/>
+   <attribute value="0.600000" type="real" id="lightSourceBrightness" name="Light Source Intensity"/>
+   <attribute value="1.800000" type="real" id="gamma" name="Gamma"/>
+   <attribute value="0.000000" type="real" id="windDirection" name="Wind Direction in Degrees"/>
+   <attribute value="1.000000" type="real" id="windSpeed" name="Wind Speed m/s"/>
+   <attribute value="false" type="bool" id="lensFlares" name="Lens Flares"/>
+   <attribute value="14.000000" type="real" id="time" name="Time"/>
+   <attribute value="0.000000" type="real" id="timeMultiplier" name="Time Multiplier"/>
+   <attribute value="17.3.2014" type="string" id="date" name="Date"/>
+  </component>
+  <component typeId="506" type="MeshmoonWater" sync="true">
+   <attribute value="0" type="uint" id="simulationModel" name="Water Type"/>
+   <attribute value="3" type="uint" id="beaufortScale" name="Beaufort Scale"/>
+   <attribute value="0.000000 0.200000 0.298039 1.000000" type="Color" id="waterColor" name="Water Color"/>
+   <attribute value="false" type="bool" id="sprayEnabled" name="Spray Enabled"/>
+   <attribute value="false" type="bool" id="drawDebug" name="Draw Debug"/>
+   <attribute value="true" type="bool" id="enableHeightQueries" name="Enable Height Queries"/>
+   <attribute value="1.000000" type="real" id="waveChoppiness" name="Wave Choppiness"/>
+   <attribute value="9.000000" type="real" id="seaLevel" name="Sea Level"/>
+   <attribute value="0.700000" type="real" id="reflectionIntensity" name="Reflection Intensity"/>
+   <attribute value="true" type="bool" id="visible" name="Visible"/>
+   <attribute value="true" type="bool" id="reflectionsEnabled" name="Reflections Enabled"/>
+  </component>
+ </entity>
+ <entity id="2" sync="true">
+  <component typeId="26" type="Name" sync="true">
+   <attribute value="TopLight" type="string" id="name" name="Name"/>
+   <attribute value="" type="string" id="description" name="Description"/>
+   <attribute value="" type="string" id="group" name="Group"/>
+  </component>
+  <component typeId="20" type="Placeable" sync="true">
+   <attribute value="2.172741,20.739321,-9.786684,0.000000,-0.000000,0.000000,1.000000,1.000000,1.000000" type="Transform" id="transform" name="Transform"/>
+   <attribute value="false" type="bool" id="drawDebug" name="Show bounding box"/>
+   <attribute value="true" type="bool" id="visible" name="Visible"/>
+   <attribute value="1" type="int" id="selectionLayer" name="Selection layer"/>
+   <attribute value="0" type="EntityReference" id="parentRef" name="Parent entity ref"/>
+   <attribute value="" type="string" id="parentBone" name="Parent bone name"/>
+  </component>
+  <component typeId="25" type="DynamicComponent" sync="true" name="LightData">
+   <attribute value="5.200000 20.790001 5.130000" type="float3" id="StartPosition" name="StartPosition"/>
+   <attribute value="13.000000" type="real" id="MoveTime" name="MoveTime"/>
+   <attribute value="-3.760000 20.639999 -39.020000" type="float3" id="EndPosition" name="EndPosition"/>
+  </component>
+  <component typeId="16" type="Light" sync="true">
+   <attribute value="0" type="int" id="type" name="Light type"/>
+   <attribute value="1.000000 0.000000 0.000000 1.000000" type="Color" id="diffColor" name="Diffuse color"/>
+   <attribute value="1.000000 1.000000 1.000000 1.000000" type="Color" id="specColor" name="Specular color"/>
+   <attribute value="false" type="bool" id="castShadows" name="Cast shadows"/>
+   <attribute value="32.000000" type="real" id="range" name="Light range"/>
+   <attribute value="3.000000" type="real" id="brightness" name="Brightness"/>
+   <attribute value="0.000000" type="real" id="constAtten" name="Constant atten"/>
+   <attribute value="0.140000" type="real" id="linearAtten" name="Linear atten"/>
+   <attribute value="0.070000" type="real" id="quadraAtten" name="Quadratic atten"/>
+   <attribute value="30.000000" type="real" id="innerAngle" name="Light inner angle"/>
+   <attribute value="40.000000" type="real" id="outerAngle" name="Light outer angle"/>
+  </component>
+ </entity>
+ <entity id="3" sync="true">
+  <component typeId="26" type="Name" sync="true">
+   <attribute value="ShaderDemoScript" type="string" id="name" name="Name"/>
+   <attribute value="" type="string" id="description" name="Description"/>
+   <attribute value="" type="string" id="group" name="Group"/>
+  </component>
+  <component typeId="5" type="Script" sync="true">
+   <attribute value="local://ShaderDemo.js" type="AssetReferenceList" id="scriptRef" name="Script ref"/>
+   <attribute value="true" type="bool" id="runOnLoad" name="Run on load"/>
+   <attribute value="0" type="int" id="runMode" name="Run mode"/>
+   <attribute value="" type="string" id="applicationName" name="Script application name"/>
+   <attribute value="" type="string" id="className" name="Script class name"/>
+  </component>
+  <component typeId="25" type="DynamicComponent" sync="true" name="DemoData">
+   <attribute value="-42.419998,29.330000,4.360000,-9.300000,-66.800003,0.000000,1.000000,1.000000,1.000000" type="Transform" id="CameraTransform" name="CameraTransform"/>
+  </component>
+ </entity>
+ <entity id="4" sync="true">
+  <component typeId="26" type="Name" sync="true">
+   <attribute value="Terrain" type="string" id="name" name="Name"/>
+   <attribute value="" type="string" id="description" name="Description"/>
+   <attribute value="" type="string" id="group" name="Group"/>
+  </component>
+  <component typeId="20" type="Placeable" sync="true">
+   <attribute value="0.000000,18.000000,0.000000,0.000000,0.000000,0.000000,1.000000,1.000000,1.000000" type="Transform" id="transform" name="Transform"/>
+   <attribute value="false" type="bool" id="drawDebug" name="Show bounding box"/>
+   <attribute value="true" type="bool" id="visible" name="Visible"/>
+   <attribute value="1" type="int" id="selectionLayer" name="Selection layer"/>
+   <attribute value="" type="EntityReference" id="parentRef" name="Parent entity ref"/>
+   <attribute value="" type="string" id="parentBone" name="Parent bone name"/>
+  </component>
+  <component typeId="17" type="Mesh" sync="true">
+   <attribute value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,200.000000,200.000000,200.000000" type="Transform" id="nodeTransformation" name="Transform"/>
+   <attribute value="Terrain.mesh" type="AssetReference" id="meshRef" name="Mesh ref"/>
+   <attribute value="" type="AssetReference" id="skeletonRef" name="Skeleton ref"/>
+   <attribute value="local://terrain.material" type="AssetReferenceList" id="materialRefs" name="Mesh materials"/>
+   <attribute value="0.000000" type="real" id="drawDistance" name="Draw distance"/>
+   <attribute value="false" type="bool" id="castShadows" name="Cast shadows"/>
+   <attribute value="false" type="bool" id="useInstancing" name="Use instancing"/>
+  </component>
+ </entity>
+ <entity id="5" sync="true">
+  <component typeId="26" type="Name" sync="true">
+   <attribute value="SideLight" type="string" id="name" name="Name"/>
+   <attribute value="" type="string" id="description" name="Description"/>
+   <attribute value="" type="string" id="group" name="Group"/>
+  </component>
+  <component typeId="16" type="Light" sync="true">
+   <attribute value="0" type="int" id="type" name="Light type"/>
+   <attribute value="0.066667 1.000000 0.000000 1.000000" type="Color" id="diffColor" name="Diffuse color"/>
+   <attribute value="1.000000 1.000000 1.000000 1.000000" type="Color" id="specColor" name="Specular color"/>
+   <attribute value="false" type="bool" id="castShadows" name="Cast shadows"/>
+   <attribute value="32.000000" type="real" id="range" name="Light range"/>
+   <attribute value="1.000000" type="real" id="brightness" name="Brightness"/>
+   <attribute value="0.000000" type="real" id="constAtten" name="Constant atten"/>
+   <attribute value="0.140000" type="real" id="linearAtten" name="Linear atten"/>
+   <attribute value="0.070000" type="real" id="quadraAtten" name="Quadratic atten"/>
+   <attribute value="30.000000" type="real" id="innerAngle" name="Light inner angle"/>
+   <attribute value="40.000000" type="real" id="outerAngle" name="Light outer angle"/>
+  </component>
+  <component typeId="20" type="Placeable" sync="true">
+   <attribute value="-5.530000,13.748917,-33.742825,0.000000,56.823528,0.000000,1.000000,1.000000,1.000000" type="Transform" id="transform" name="Transform"/>
+   <attribute value="false" type="bool" id="drawDebug" name="Show bounding box"/>
+   <attribute value="true" type="bool" id="visible" name="Visible"/>
+   <attribute value="1" type="int" id="selectionLayer" name="Selection layer"/>
+   <attribute value="" type="EntityReference" id="parentRef" name="Parent entity ref"/>
+   <attribute value="" type="string" id="parentBone" name="Parent bone name"/>
+  </component>
+  <component typeId="25" type="DynamicComponent" sync="true" name="LightData">
+   <attribute value="-5.530000 20.660000 9.020000" type="float3" id="StartPosition" name="StartPosition"/>
+   <attribute value="8.000000" type="real" id="MoveTime" name="MoveTime"/>
+   <attribute value="-5.530000 11.970000 -44.750000" type="float3" id="EndPosition" name="EndPosition"/>
+  </component>
+ </entity>
+ <entity id="6" sync="true">
+  <component typeId="26" type="Name" sync="true">
+   <attribute value="TerrainLight1" type="string" id="name" name="Name"/>
+   <attribute value="" type="string" id="description" name="Description"/>
+   <attribute value="" type="string" id="group" name="Group"/>
+  </component>
+  <component typeId="16" type="Light" sync="true">
+   <attribute value="0" type="int" id="type" name="Light type"/>
+   <attribute value="0.886275 0.901961 0.862745 1.000000" type="Color" id="diffColor" name="Diffuse color"/>
+   <attribute value="1.000000 1.000000 1.000000 1.000000" type="Color" id="specColor" name="Specular color"/>
+   <attribute value="false" type="bool" id="castShadows" name="Cast shadows"/>
+   <attribute value="47.000000" type="real" id="range" name="Light range"/>
+   <attribute value="8.000000" type="real" id="brightness" name="Brightness"/>
+   <attribute value="0.000000" type="real" id="constAtten" name="Constant atten"/>
+   <attribute value="0.140000" type="real" id="linearAtten" name="Linear atten"/>
+   <attribute value="0.070000" type="real" id="quadraAtten" name="Quadratic atten"/>
+   <attribute value="30.000000" type="real" id="innerAngle" name="Light inner angle"/>
+   <attribute value="40.000000" type="real" id="outerAngle" name="Light outer angle"/>
+  </component>
+  <component typeId="20" type="Placeable" sync="true">
+   <attribute value="34.204372,24.594261,-51.234146,0.000000,0.000000,0.000000,1.000000,1.000000,1.000000" type="Transform" id="transform" name="Transform"/>
+   <attribute value="false" type="bool" id="drawDebug" name="Show bounding box"/>
+   <attribute value="true" type="bool" id="visible" name="Visible"/>
+   <attribute value="1" type="int" id="selectionLayer" name="Selection layer"/>
+   <attribute value="" type="EntityReference" id="parentRef" name="Parent entity ref"/>
+   <attribute value="" type="string" id="parentBone" name="Parent bone name"/>
+  </component>
+  <component typeId="25" type="DynamicComponent" sync="true" name="LightData">
+   <attribute value="47.779999 39.840000 -44.840000" type="float3" id="StartPosition" name="StartPosition"/>
+   <attribute value="8.000000" type="real" id="MoveTime" name="MoveTime"/>
+   <attribute value="30.709999 20.670000 -52.880001" type="float3" id="EndPosition" name="EndPosition"/>
+  </component>
+ </entity>
+ <entity id="7" sync="true">
+  <component typeId="26" type="Name" sync="true">
+   <attribute value="TerrainLight2" type="string" id="name" name="Name"/>
+   <attribute value="" type="string" id="description" name="Description"/>
+   <attribute value="" type="string" id="group" name="Group"/>
+  </component>
+  <component typeId="16" type="Light" sync="true">
+   <attribute value="0" type="int" id="type" name="Light type"/>
+   <attribute value="0.901961 0.901961 0.901961 1.000000" type="Color" id="diffColor" name="Diffuse color"/>
+   <attribute value="1.000000 1.000000 1.000000 1.000000" type="Color" id="specColor" name="Specular color"/>
+   <attribute value="false" type="bool" id="castShadows" name="Cast shadows"/>
+   <attribute value="47.000000" type="real" id="range" name="Light range"/>
+   <attribute value="6.000000" type="real" id="brightness" name="Brightness"/>
+   <attribute value="0.000000" type="real" id="constAtten" name="Constant atten"/>
+   <attribute value="0.140000" type="real" id="linearAtten" name="Linear atten"/>
+   <attribute value="0.070000" type="real" id="quadraAtten" name="Quadratic atten"/>
+   <attribute value="30.000000" type="real" id="innerAngle" name="Light inner angle"/>
+   <attribute value="40.000000" type="real" id="outerAngle" name="Light outer angle"/>
+  </component>
+  <component typeId="20" type="Placeable" sync="true">
+   <attribute value="94.933228,25.757971,-1.760173,0.000000,0.000000,0.000000,1.000000,1.000000,1.000000" type="Transform" id="transform" name="Transform"/>
+   <attribute value="false" type="bool" id="drawDebug" name="Show bounding box"/>
+   <attribute value="true" type="bool" id="visible" name="Visible"/>
+   <attribute value="1" type="int" id="selectionLayer" name="Selection layer"/>
+   <attribute value="" type="EntityReference" id="parentRef" name="Parent entity ref"/>
+   <attribute value="" type="string" id="parentBone" name="Parent bone name"/>
+  </component>
+  <component typeId="25" type="DynamicComponent" sync="true" name="LightData">
+   <attribute value="99.239998 23.469999 -21.549999" type="float3" id="StartPosition" name="StartPosition"/>
+   <attribute value="10.000000" type="real" id="MoveTime" name="MoveTime"/>
+   <attribute value="91.559998 27.549999 13.740000" type="float3" id="EndPosition" name="EndPosition"/>
+  </component>
+ </entity>
+</scene>

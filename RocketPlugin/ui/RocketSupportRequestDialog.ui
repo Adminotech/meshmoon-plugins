@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RocketSupportRequestDialog</class>
+ <widget class="QWidget" name="RocketSupportRequestDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>605</width>
+    <height>412</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Meshmoon Support Request</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+	background-color: transparent;
+	color: rgb(80, 80, 80);
+	border: 1px solid grey;
+	border: 0px;
+	border-radius: 3px;
+	font-family: &quot;Arial&quot;;
+	font-size: 13px;
+	font-weight: bold;
+	min-width: 75px;
+	min-height: 25px;
+	max-height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+QPushButton#buttonShowReport {
+	border: 1px solid grey;
+}
+
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(242, 244, 243, 255), stop:1 rgba(255, 255, 255, 255));
+	color: rgb(60, 60, 60);
+	border: 1px solid grey;
+}
+
+QPushButton:pressed {
+	background-color: rgba(200, 200, 200);
+	border: 1px solid grey;
+}
+
+QPushButton:default {
+	color: rgb(25,25,25);
+}
+
+QLabel, QPlainTextEdit {
+	font-family: &quot;Arial&quot;;
+	font-size: 13px;
+}
+
+QLabel#labelDescTitle {
+	font-size: 18px;
+	font-weight: bold;
+	color: rgb(243,154,41);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="labelDescTitle">
+     <property name="text">
+      <string>Send a message to Meshmoon support</string>
+     </property>
+     <property name="indent">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelHelp">
+     <property name="text">
+      <string>Describe your problem in the text area below. Additional information about your hardware, network and possible active world connection will be sent with the report. This will help us in resolving the issue, you can preview what gets sent from the below button.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="indent">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="editMessage"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="buttonShowReport">
+       <property name="text">
+        <string>Preview additional data...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonSend">
+       <property name="text">
+        <string>Send</string>
+       </property>
+       <property name="icon">
+        <iconset resource="RocketPlugin.qrc">
+         <normaloff>:/images/icon-check.png</normaloff>:/images/icon-check.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonCancel">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+       <property name="icon">
+        <iconset resource="RocketPlugin.qrc">
+         <normaloff>:/images/icon-cross.png</normaloff>:/images/icon-cross.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="RocketPlugin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

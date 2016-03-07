@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RocketPresisWidget</class>
+ <widget class="QWidget" name="RocketPresisWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>862</width>
+    <height>737</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#RocketPresisWidget {
+	background-color: transparent;
+}
+
+QLabel#labelTitlePres, #labelTitleEnv {
+	font-family: &quot;Arial&quot;;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(80, 80, 80);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(225, 226, 227, 255));
+	border: 1px solid grey;
+	border-radius: 0px;
+	border-top-right-radius: 3px;
+	border-bottom: 0px;
+	border-left: 0px;
+}
+
+QPushButton#buttonRename, #buttonRemove {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(225, 226, 227, 255));
+	color: rgb(80, 80, 80);
+	border: 1px solid grey;
+	border-bottom: 0px;
+	border-left: 0px;
+	border-radius: 0px;
+	font-family: &quot;Arial&quot;;
+	font-size: 12px;
+	font-weight: bold;
+	min-height: 20px;
+}
+
+QPushButton#buttonRename:disabled, #buttonRemove:disabled {
+	color: rgb(150, 150, 150);
+}
+
+QPushButton#buttonRename:hover, #buttonRemove:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(242, 244, 243, 255), stop:1 rgba(225, 226, 227, 255));
+	color: rgb(30, 30, 30);
+}
+
+QPushButton#StartButton, #ExitButton {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(225, 226, 227, 255));
+	color: rgb(80, 80, 80);
+	border: 1px solid grey;
+	border-radius: 3px;
+	font-family: &quot;Arial&quot;;
+	font-size: 12px;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+QPushButton#StartButton {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+QPushButton#ExitButton {
+	border-right: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+QPushButton#StartButton:hover, #ExitButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(242, 244, 243, 255), stop:1 rgba(235, 236, 237, 255));
+	color: rgb(60, 60, 60);
+}
+
+QPushButton#StartButton:pressed, #ExitButton:pressed {
+	background-color: rgba(200, 200, 200);
+}
+
+QFrame#frameStatus {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 234, 233, 255), stop:1 rgba(225, 226, 227, 255));
+	color: rgb(80, 80, 80);
+	border: 1px solid grey;
+	border-radius: 3px;
+}
+
+QLabel#labelStatus {
+	font-family: &quot;Arial&quot;;
+	font-size: 14px;
+	font-weight: bold;
+	color: rgb(80, 80, 80);
+}
+
+QLabel#labelCurrentPresentation, #labelCurrentScene {
+	border: 1px solid grey;
+	border-radius: 0px;
+	border-bottom-right-radius: 3px;
+	border-left: 0px;
+}
+
+QListView {
+	font-family: &quot;Arial&quot;;
+	font-size: 16px;
+	show-decoration-selected: 1;
+	border: 1px solid grey;
+	border-radius: 0px;
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+	background-color: rgba(255,255,255,200);
+ }
+
+QListView::item {
+	color: rgb(80,80,80);
+	min-height: 30px;
+	border: 0px;
+}
+
+QListView::item:selected, ::item:selected:hover {
+	background-color: rgb(230, 230, 230);
+	color: black;
+}
+
+QListView::item:hover {
+	background-color: rgba(230, 230, 230, 70);
+}
+
+QLabel#helpText {
+	color: rgb(236,238,238);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>9</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>9</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>9</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="NewPresentationButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>120</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>120</height>
+        </size>
+       </property>
+       <property name="acceptDrops">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#NewPresentationButton {
+	border: 2px dashed rgb(120, 120, 120);
+	border-radius: 7px;
+	font-family: &quot;Arial&quot;;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(120, 120, 120);
+	padding: 5px;
+}
+
+QPushButton#NewPresentationButton:hover {
+	background-color: transparent;
+	border: 2px dashed rgb(80, 80, 80);
+	color: rgb(80, 80, 80);
+}</string>
+       </property>
+       <property name="text">
+        <string>Click or drag and drop a PowerPoint/PDF 
+file to create a new presentation</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>240</width>
+         <height>120</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>240</width>
+         <height>120</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="RocketPlugin.qrc">:/images/logo-presis.png</pixmap>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QListWidget" name="PresentationList">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>240</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelTitlePres">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Presentation</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="buttonRename">
+           <property name="text">
+            <string>Rename</string>
+           </property>
+           <property name="icon">
+            <iconset resource="RocketPlugin.qrc">
+             <normaloff>:/images/icon-material.png</normaloff>:/images/icon-material.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>18</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonRemove">
+           <property name="text">
+            <string>Remove</string>
+           </property>
+           <property name="icon">
+            <iconset resource="RocketPlugin.qrc">
+             <normaloff>:/images/icon-recycle.png</normaloff>:/images/icon-recycle.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelCurrentPresentation">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>192</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>192</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QListWidget" name="SceneList">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>220</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelTitleEnv">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Environment</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelCurrentScene">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>192</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>192</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>1</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QFrame" name="frameStatus">
+       <property name="minimumSize">
+        <size>
+         <width>240</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="leftMargin">
+         <number>6</number>
+        </property>
+        <property name="topMargin">
+         <number>3</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <property name="bottomMargin">
+         <number>3</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelStatusAnimation">
+          <property name="minimumSize">
+           <size>
+            <width>42</width>
+            <height>42</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>42</width>
+            <height>42</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="indent">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelStatus">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ExitButton">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Close Presis</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="RocketPlugin.qrc">
+         <normaloff>:/images/icon-cross.png</normaloff>:/images/icon-cross.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="StartButton">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Start Presentation</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="RocketPlugin.qrc">
+         <normaloff>:/images/icon-check.png</normaloff>:/images/icon-check.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1000</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="helpText">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Want your own world as a presentation envinronment? Contact us at &lt;a href=mailto:meshmoon@meshmoon.com&gt;meshmoon@meshmoon.com&lt;/a&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="indent">
+      <number>0</number>
+     </property>
+     <property name="openExternalLinks">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="RocketPlugin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

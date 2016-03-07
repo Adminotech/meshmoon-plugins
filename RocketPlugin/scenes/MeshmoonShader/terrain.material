@@ -1,0 +1,48 @@
+material
+{
+    technique
+    {
+        pass
+        {
+            vertex_program_ref meshmoon/WeightedDiffuseLightMapVP
+            {
+            }
+            
+            fragment_program_ref meshmoon/WeightedDiffuseLightMapFP
+            {
+				param_named weightMapTiling float2 -1 -1
+                param_named diffuseMapTilings float8 40 40 30 30 15 15 20 40
+            }
+            
+            texture_unit weightMap
+            {
+                texture weight_map.png
+            }
+            
+            texture_unit diffuseMap1
+            {
+                texture ground.png
+            }
+            
+            texture_unit diffuseMap2
+            {
+                texture rock.jpg
+            }
+
+            texture_unit diffuseMap3
+            {
+                texture sand.png
+            }
+
+            texture_unit diffuseMap4
+            {
+                texture snow.png
+            }
+			
+			texture_unit lightMap
+			{
+				texture TerrainLightmap.png
+			}
+        }
+    }
+}

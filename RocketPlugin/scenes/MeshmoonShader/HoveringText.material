@@ -1,0 +1,17 @@
+material meshmoon-shader-demo-hovering-text
+{
+    technique
+    {
+        pass
+        {
+            scene_blend alpha_blend
+            lighting off
+            depth_write off
+
+            texture_unit
+            {
+                alpha_op_ex blend_manual src_texture src_manual 1.0 1.0 1.0
+            }
+        }
+    }
+}

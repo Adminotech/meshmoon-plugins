@@ -1,0 +1,24 @@
+material
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref meshmoon/DiffuseVP
+			{
+			}
+			
+			fragment_program_ref meshmoon/DiffuseFP
+			{
+				param_named specularHardness float 30
+				param_named specularPower float 0.5
+				param_named diffuseMapTiling float2 3 2
+			}
+			
+			texture_unit diffuseMap
+			{
+				texture sphere_COLOR.png
+			}
+		}
+	}
+}
